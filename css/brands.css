@@ -157,7 +157,7 @@ button:hover,
 /* Bluesky */
 .button.button-bluesky {
   color: #0560ff;
-  background-image: linear-gradient(-135deg, #0560ff, #ffffff, #0560ff);
+  background-image: linear-gradient(to right, #0560ff, #ffffff, #ffffff, #ffffff, #0560ff);
 }
 .button.button-bluesky:hover,
 .button.button-bluesky:focus {
