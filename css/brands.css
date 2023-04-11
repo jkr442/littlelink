@@ -154,6 +154,16 @@ button:hover,
   filter: brightness(90%);
 }
 
+/* Bluesky */
+.button.button-bluesky {
+  color: #0560ff;
+  background-image: linear-gradient(-135deg, #0560ff, #FFFFFF, #0560ff);
+}
+.button.button-bluesky:hover,
+.button.button-bluesky:focus {
+  filter: brightness(90%);
+}
+
 /* Buy Me a Coffee */
 .button.button-coffee {
   color: #100a26;
