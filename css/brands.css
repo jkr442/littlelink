@@ -384,8 +384,8 @@ button:hover,
 
 /* Last.fm */
 .button.button-letterboxd {
-  color: #c3000d;
-  background-color: #000000;
+  color: #000000;
+  background-color: #c3000d;
 }
 .button.button-letterboxd:hover,
 .button.button-letterboxd:focus {
