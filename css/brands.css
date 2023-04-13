@@ -387,8 +387,8 @@ button:hover,
   color: #000000;
   background-color: #c3000d;
 }
-.button.button-letterboxd:hover,
-.button.button-letterboxd:focus {
+.button.button-last.fm:hover,
+.button.button-last.fm:focus {
   filter: brightness(90%);
 }
 
