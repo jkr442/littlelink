@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Collapsible Table</title>
+	<style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			max-width: 800px;
+		}
+
+		th, td {
+			text-align: left;
+			padding: 8px;
+			border-bottom: 1px solid #ddd;
+		}
+
+		th {
+			background-color: #f2f2f2;
+		}
+
+		.collapsible-header {
+			background-color: #f2f2f2;
+			cursor: pointer;
+			padding: 8px;
+			border: none;
+			text-align: left;
+			outline: none;
+			font-size: 16px;
+			transition: 0.4s;
+		}
+
+		.collapsible-header:hover {
+			background-color: #ddd;
+		}
+
+		.collapsible-content {
+			padding: 0 8px;
+			display: none;
+			overflow: hidden;
+			border: 1px solid #ddd;
+			background-color: #fff;
+		}
+	</style>
+	<script>
+		function toggleContent(event) {
+			var content = event.target.nextElementSibling;
+			if (content.style.display === "block") {
+				content.style.display = "none";
+			} else {
+				content.style.display = "block";
+			}
+		}
+	</script>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>Section 1</th>
+				<th>Section 2</th>
+				<th>Section 3</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<button class="collapsible-header" onclick="toggleContent(event)">Section 1</button>
+					<div class="collapsible-content">
+						<p>Content for section 1 goes here.</p>
+					</div>
+				</td>
+				<td>
+					<button class="collapsible-header" onclick="toggleContent(event)">Section 2</button>
+					<div class="collapsible-content">
+						<p>Content for section 2 goes here.</p>
+					</div>
+				</td>
+				<td>
+					<button class="collapsible-header" onclick="toggleContent(event)">Section 3</button>
+					<div class="collapsible-content">
+						<p>Content for section 3 goes here.</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button class="collapsible-header" onclick="toggleContent(event)">Section 4</button>
+					<div class="collapsible-content">
+						<p>Content for section 4 goes here.</p>
+					</div>
+				</td>
+				<td>
+					<button class="collapsible-header" onclick="toggleContent(event)">Section 5</button>
+					<div class="collapsible-content">
+						<p>Content for section 5 goes here.</p>
+					</div>
+				</td>
+				<td>
+					<button class="collapsible-header" onclick="toggleContent(event)">Section 6</button>
+					<div class="collapsible-content">
+						<p>Content for section 6 goes here.</p>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
