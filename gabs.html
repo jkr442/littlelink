@@ -114,7 +114,7 @@
 				<td>6%</td>
 				<td>STEPPING UP</td>
 				<td><details><summary>Details</summary>A delightfully tart Grapefruit Beliner Weisse infused with Jasmine Green Tea. Bit notes of citrus and floral jasmine. Serve with Tapioca Pearls for full experience!</details></td>
-				<td>-</td>
+				<td><input type="checkbox" id="option1"></td>
 			</tr>
 			<tr>
 				<td>2</td>
@@ -1359,4 +1359,60 @@
 			</tr>
 		</tbody>
 	</table>
+
+	<button>Check all</button>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/jquery.cookie/1.4.0/jquery.cookie.min.js"></script>
+
+    <script>
+      function handleButtonClick(button){
+        if ($(button).text().match("Check all")){
+          $(":checkbox").prop("checked", true)
+        } else {
+          $(":checkbox").prop("checked", false)
+        };
+        updateButtonStatus();
+      }
+
+      function updateButtonStatus(){
+        var allChecked = $(":checkbox").length === $(":checkbox:checked").length;
+        $("button").text(allChecked? "Uncheck all" : "Check all");
+      }
+
+      function updateCookie(){
+        var elementValues = {};
+        $(":checkbox").each(function(){
+          elementValues[this.id] = this.checked;
+        });
+
+        elementValues["buttonText"] = $("button").text();
+        $.cookie('elementValues', elementValues, { expires: 7, path: '/' })
+      }
+
+      function repopulateFormELements(){
+        var elementValues = $.cookie('elementValues');
+        if(elementValues){
+          Object.keys(elementValues).forEach(function(element) {
+            var checked = elementValues[element];
+            $("#" + element).prop('checked', checked);
+          });
+
+          $("button").text(elementValues["buttonText"])
+        }
+      }
+
+      $(":checkbox").on("change", function(){
+        updateButtonStatus();
+        updateCookie();
+      });
+
+      $("button").on("click", function() {
+        handleButtonClick(this);
+        updateCookie();
+      });
+
+      $.cookie.json = true;
+      repopulateFormELements();
+    </script>
 </body>
