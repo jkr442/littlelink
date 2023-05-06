@@ -272,6 +272,16 @@ button:hover,
   filter: brightness(90%);
 }
 
+/* GABS */
+.button.button-gabs {
+  color: #ffffff;
+  background-color: #c3000d;
+}
+.button.button-gabs:hover,
+.button.button-gabs:focus {
+  filter: brightness(90%);
+}
+
 /* GitHub */
 .button.button-github {
   color: #ffffff;
