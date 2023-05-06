@@ -274,8 +274,8 @@ button:hover,
 
 /* GABS */
 .button.button-gabs {
-  color: #ffffff;
-  background-color: #c3000d;
+  color: #c3000d;
+  background-color: #ffffff;
 }
 .button.button-gabs:hover,
 .button.button-gabs:focus {
