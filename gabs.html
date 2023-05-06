@@ -82,7 +82,7 @@
   	<link rel="icon" type="image/png" href="images/gabsfav.png">
 </head>
 <body>
-	<table id="myTable">
+	<table id="beers">
 		<thead>
 			<tr>
 				<th>#</th>
@@ -1321,7 +1321,7 @@
 	<div class="w3-container">
 		<div class="w3-show-inline-block">
 		<div class="w3-bar">
-		<input style="float: left;" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search...">
+		<input style="float: left;" type="text" id="myInput" onkeyup="filterTable()" placeholder="Search...">
 		<button style="float: right;">😈Check all😈</button>
 		</div>
 		</div>
@@ -1381,6 +1381,40 @@
       repopulateFormELements();
 	</script>
 	<script>
+	function filterTable(beers, filter) {
+		// Get the table element
+		var table = document.getElementById(tableId);
+	  
+		// Get all the rows of the table
+		var rows = table.getElementsByTagName("tr");
+	  
+		// Loop through all rows and hide those that do not match the search query
+		for (var i = 0; i < rows.length; i++) {
+		  var row = rows[i];
+	  
+		  // Get all the cells of the current row
+		  var cells = row.getElementsByTagName("td");
+	  
+		  // Loop through all the cells and check if the cell text matches the search query
+		  var foundMatch = false;
+		  for (var j = 0; j < cells.length; j++) {
+			var cell = cells[j];
+			if (cell.innerText.toLowerCase().indexOf(filter.toLowerCase()) > -1) {
+			  foundMatch = true;
+			  break;
+			}
+		  }
+	  
+		  // Show or hide the row based on whether a match was found
+		  if (foundMatch) {
+			row.style.display = "";
+		  } else {
+			row.style.display = "none";
+		  }
+		}
+	  }
+	</script>
+	<!-- <script>
 		function myFunction() {
 		var input, filter, table, tr, td, i;
 		input = document.getElementById("myInput");
@@ -1404,5 +1438,5 @@
 		}
 		}
 	}
-	</script>
+	</script> -->
 </body>
