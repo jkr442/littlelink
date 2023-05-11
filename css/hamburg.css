@@ -1,6 +1,10 @@
 body{
-    display:grid;
-    place-items:right;
+    position: absolute;
+    top: 1.20rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
     height:100vh;
     background:#4c566a;
     margin:0;
