@@ -125,10 +125,10 @@ p {
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #0085ff;
+  color: #D8DEE9;
 }
 a:hover {
-  color: #0085ff;
+  color: #D8DEE9;
 }
 
 /* Code
@@ -138,8 +138,8 @@ code {
   margin: 0 0.2rem;
   font-size: 90%;
   white-space: nowrap;
-  background: #f1f1f1;
-  border: 1px solid #e1e1e1;
+  background: #ECEFF4;
+  border: 1px solid #ECEFF4;
   border-radius: 4px;
 }
 pre > code {
@@ -192,7 +192,7 @@ hr {
   margin-top: 3rem;
   margin-bottom: 3.5rem;
   border-width: 0;
-  border-top: 1px solid #e1e1e1;
+  border-top: 1px solid #ECEFF4;
 }
 /* Radius values:
 
