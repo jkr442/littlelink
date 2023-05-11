@@ -128,7 +128,25 @@ a {
   color: #D8DEE9;
 }
 a:hover {
-  color: #D8DEE9;
+  color: #ECEFF4; 
+}
+a:focus {
+  outline: #ECEFF4 solid 2px;
+  border-radius: 2px;
+}         
+
+/* Link Color Dark Theme */
+@media (prefers-color-scheme: dark) {
+  a {
+    color: #D8DEE9;
+}
+a:hover {
+  color: #ECEFF4;
+}
+a:focus {
+  outline: #ECEFF4 solid 2px;
+  border-radius: 2px;
+}
 }
 
 /* Code
@@ -138,8 +156,8 @@ code {
   margin: 0 0.2rem;
   font-size: 90%;
   white-space: nowrap;
-  background: #ECEFF4;
-  border: 1px solid #ECEFF4;
+  background: #f1f1f1;
+  border: 1px solid #e1e1e1;
   border-radius: 4px;
 }
 pre > code {
@@ -192,7 +210,7 @@ hr {
   margin-top: 3rem;
   margin-bottom: 3.5rem;
   border-width: 0;
-  border-top: 1px solid #ECEFF4;
+  border-top: 1px solid #e1e1e1;
 }
 /* Radius values:
 
@@ -205,25 +223,6 @@ hr {
   object-fit: cover;
   background-position: center;
   border-radius: 50%;
-}
-
-.fit {
-  max-width: 99%;
-  max-height: 99%;
-}
-
-div.fill-screen {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  text-align: center;
-}
-
-img.make-it-fit {
-  max-width: 99%;
-  max-height: 99%;
 }
 
 /* open-sans-regular - vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic */
