@@ -212,6 +212,20 @@ hr {
   max-height: 99%;
 }
 
+div.fill-screen {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+}
+
+img.make-it-fit {
+  max-width: 99%;
+  max-height: 99%;
+}
+
 /* open-sans-regular - vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
