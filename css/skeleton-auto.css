@@ -55,6 +55,11 @@
   float: center;
   box-sizing: border-box;
 }
+.resize_fit_center {
+  max-width:99%;
+  max-height:99%;
+  vertical-align: middle;
+}
 
 /* For devices larger than 400px */
 @media (min-width: 400px) {
