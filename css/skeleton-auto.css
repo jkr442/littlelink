@@ -106,6 +106,7 @@ body {
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 h1 {
+  font-family: 'Open Sans', sans-serif;
   margin-top: 0;
   margin-bottom: 16px;
   font-weight: 800;
