@@ -9,8 +9,8 @@ body{
 
 label{
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 1.20rem;
+  right: 1rem;
   display:flex;
   flex-direction:column;
   width:70px;
