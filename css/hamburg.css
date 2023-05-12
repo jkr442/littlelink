@@ -1,5 +1,5 @@
 #check {
-  display: flex;
+  display: grid;
   place-items: right;
   height: 100vh;
   background: #4c566a;
