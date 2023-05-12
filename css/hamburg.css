@@ -1,14 +1,9 @@
-check {
+#check {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 30px;
-  height: 21px;
-  margin: 1.20rem 1rem 0 0;
+  place-items: right;
+  height: 100vh;
   background: #4c566a;
+  margin: 0;
   padding: 0;
 }
   
