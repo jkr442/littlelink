@@ -1,3 +1,3 @@
-# 🔗 Jourdan's LittleLink
+# 🔗 Jourdan's Static Site
 
 TBD

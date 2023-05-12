@@ -11,6 +11,7 @@ label{
   position: absolute;
   top: -0.7rem;
   right: -0.7rem;
+  display:flex;
   flex-direction:column;
   width:70px;
   cursor:pointer;
