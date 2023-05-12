@@ -13,7 +13,7 @@ label{
   right: 0rem;
   display:flex;
   flex-direction:column;
-  width:70px;
+  width:1px;
   cursor:pointer;
   transform: scale(0.5); /* added this line to scale down by 50% */
 }
