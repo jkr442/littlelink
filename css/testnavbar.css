@@ -162,3 +162,10 @@ input[type="checkbox"]:checked~span:nth-of-type(3) {
         display: flex;
     }
 }
+
+/* hide toggle button on larger devices */
+@media (min-width: 601px) {
+    .toggle-button {
+        display: none;
+    }
+}
