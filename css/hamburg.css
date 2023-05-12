@@ -9,7 +9,7 @@ body{
 
 label{
   position: absolute;
-  top: 1.20rem;
+  top: 1rem;
   right: 1rem;
   display:flex;
   flex-direction:column;
