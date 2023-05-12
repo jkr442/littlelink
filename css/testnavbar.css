@@ -14,7 +14,7 @@ label {
     position: absolute;
     top: -0.7rem;
     right: -0.7rem;
-    display: none;
+    display: flex;
     flex-direction: column;
     width: 70px;
     cursor: pointer;
@@ -85,7 +85,7 @@ input[type="checkbox"]:checked~span:nth-of-type(3) {
 
 .navbar-links {
     height: 100%;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .navbar-links ul {
@@ -113,7 +113,7 @@ input[type="checkbox"]:checked~span:nth-of-type(3) {
     position: absolute;
     top: 1.20rem;
     right: 1rem;
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
