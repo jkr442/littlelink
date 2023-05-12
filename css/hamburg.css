@@ -1,7 +1,7 @@
 body{
   display:grid;
   place-items:right;
-  height:10vh;
+  height:0vh;
   background:#4c566a;
   margin:0;
   padding:0;
