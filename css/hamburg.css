@@ -1,7 +1,7 @@
 body{
   display:grid;
   place-items:right;
-  height:0vh;
+  height:100vh;
   background:#4c566a;
   margin:0;
   padding:0;
@@ -9,8 +9,8 @@ body{
 
 label{
   position: absolute;
-  top: 0rem;
-  right: 0rem;
+  top: -0.7rem;
+  right: -0.7rem;
   display:flex;
   flex-direction:column;
   width:70px;
