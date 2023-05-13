@@ -120,6 +120,7 @@ h2 {
 h3 {
   font-size: 20px;
   line-height: 20px;
+  font-weight: 100;
 }
 
 /* Larger than phablet */
