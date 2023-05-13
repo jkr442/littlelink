@@ -99,14 +99,12 @@ body {
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
-  font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
+  font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen-Sans,Ubuntu,Cantarell,helvetica neue,Helvetica,pingfang sc,STXihei,华文细黑,microsoft yahei,微软雅黑,SimSun,宋体,Heiti,黑体,sans-serif;
 }
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 h1 {
-  font-family: 'Open Sans', sans-serif;
   margin-top: 0;
   margin-bottom: 16px;
   font-weight: 800;
