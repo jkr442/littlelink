@@ -110,11 +110,12 @@ h1 {
   letter-spacing: 0;
   margin-top: 0;
   margin-bottom: 16px;
-  font-weight: 600;
+  font-weight: 400;
 }
 h2 {
   font-size: 2.8rem;
   line-height: 3.2rem;
+  font-weight: 100;
 }
 
 /* Larger than phablet */
