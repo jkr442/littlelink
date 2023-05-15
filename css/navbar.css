@@ -84,7 +84,6 @@ input[type="checkbox"]:checked~span:nth-of-type(3) {
 }
 
 .navbar-links {
-    height: 100%;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
