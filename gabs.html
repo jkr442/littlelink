@@ -1,7 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+	<!-- Page Information
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta charset="utf-8">
 	<title>GABS 2023 Beer List</title>
+	<meta name="description" content="A searchable, checkable, and readable list of all the beers at GABS this year.">
+	<meta name="author" content="Jourdan Keillor">
+
+	<!-- Mobile Specific Metas
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="stylesheet" href="css/normalize.css">
+
+	<!-- Themes:
+			Auto:   css/skeleton-auto.css
+			Light:  css/skeleton-light.css
+			Dark:   css/skeleton-dark.css
+		-->
+	<link rel="stylesheet" href="css/skeleton-auto.css">
+
+	<!-- Favicon
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="icon" type="image/png" href="images/gabsfav.png">
+
+	<!-- Table Style (Custom for this page)
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<style>
 		body {
 			background-color: #2E3440;
@@ -25,7 +53,7 @@
 		th {
 			background-color: #4C566A;
 			position: sticky;
-        	top: 0;
+			top: 0;
 		}
 
 		.collapsible-header {
@@ -60,6 +88,9 @@
 			margin: 0;
 		}
 	</style>
+
+	<!-- Table Style (Custom for this page)
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<script>
 		function toggleContent(event) {
 			var content = event.target.nextElementSibling;
@@ -77,10 +108,8 @@
 			}
 		}
 	</script>
-	<!-- Favicon
-	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  	<link rel="icon" type="image/png" href="images/gabsfav.png">
 </head>
+
 <body>
 	<table id="beers">
 		<thead>
@@ -1417,14 +1446,18 @@
 	}
 	</script>
 	
-	
-<!--Footer-->
-	<p style="font-size: 50%;">
-		<div style="text-align: center;">
-		<p>Site by Jourdan Keillor.
-			<br>
-			<a href="https://link.jozk.me">Link to my socials.</a></p>
-	  <br>
-		</div>
-	</p>
+  <!-- Footer
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <footer class="footer">
+    <div class="row">
+      <div class="column">
+        <p style="font-size: 75%;">© 2023 Jourdan Keillor · <a href="privacy.html">Privacy</a>
+          <br>Powered by <a href="https://vercel.com/">Vercel</a> and forked from <a href="https://littlelink.io/">LittleLink</a></p>
+      </div>
+    </div>
+  </footer>
+
+    <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
+</html>
