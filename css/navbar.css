@@ -5,7 +5,7 @@
 body {
     display: grid;
     place-items: right;
-    height: 100vh;
+    height: 24px;
     margin: 0;
     padding: 0;
 }
