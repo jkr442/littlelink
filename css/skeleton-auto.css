@@ -1,20 +1,3 @@
-/*
-* littlelink V1
-* https://littlelink.com
-* Free to use under the MIT license.
-* http://www.opensource.org/licenses/mit-license.php
-* 12/21/2019
-*
-* Built using:
-*
-* Skeleton V2.0.4
-* Copyright 2014, Dave Gamache
-* www.getskeleton.com
-* Free to use under the MIT license.
-* http://www.opensource.org/licenses/mit-license.php
-* 12/29/2014
-*/
-
 /* Table of contents
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 - Grid
@@ -24,9 +7,6 @@
 - Code
 - Spacing
 - Utilities
-*
-* You'll find the button css in css/brands.css.
-*
 */
 
 /* Grid
@@ -84,17 +64,6 @@
   }
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  color: #D8DEE9;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
 
 /* Base Styles
@@ -107,6 +76,7 @@ html {
   font-size: 100%;
   color-scheme: light dark;
 }
+
 body {
   background-color: #2e3440;
   font-size: 18px;
@@ -114,6 +84,18 @@ body {
   font-weight: 400;
   font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen-Sans,Ubuntu,Cantarell,helvetica neue,Helvetica,pingfang sc,STXihei,华文细黑,microsoft yahei,微软雅黑,SimSun,宋体,Heiti,黑体,sans-serif;
   margin-bottom: 50px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  color: #D8DEE9;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Typography
