@@ -125,13 +125,9 @@
         }
 
         /* Style the tab content */
-        .tabcontent {
-            display: none;
-        }
-
-        /* Make the tab content visible */
-        .tabcontent:target {
-            display: block;
+        .tabcontent clearfix {
+            display: block; /* Display all content by default */
+            padding: 20px;
         }
 
         /* Clear floats after the tab */
@@ -139,6 +135,31 @@
             content: "";
             clear: both;
             display: table;
+        }
+
+        /* Style the side navbar */
+        .side-navbar {
+            position: fixed;
+            right: 0; /* Align to the right side */
+            top: 0;
+            bottom: 0;
+            background-color: #f1f1f1;
+            padding-top: 60px; /* Adjust according to your navbar height */
+            width: 200px;
+            overflow-y: auto;
+        }
+
+        /* Style links inside the navbar */
+        .side-navbar a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: black;
+        }
+
+        /* Change color on hover */
+        .side-navbar a:hover {
+            background-color: #ddd;
         }
       </style>
 
@@ -178,24 +199,31 @@
     </div>
   </nav>
 
+  <!-- Unique side navbar -->
+    <nav class="side-navbar">
+        <div class="tab">
+            <button class="tablinks" onclick="location.href='#Music'">Music</button>
+            <button class="tablinks" onclick="location.href='#TV'">TV</button>
+            <button class="tablinks" onclick="location.href='#Movies'">Movies</button>
+            <button class="tablinks" onclick="location.href='#Games'">Games</button>
+            <button class="tablinks" onclick="location.href='#Books'">Books</button>
+        </div>
+    </nav>
+
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-  <div class="container">
-    <div class="tab">
-        <button class="tablinks" onclick="location.href='#Music'">Music</button>
-        <button class="tablinks" onclick="location.href='#TV'">TV</button>
-        <button class="tablinks" onclick="location.href='#Movies'">Movies</button>
-        <button class="tablinks" onclick="location.href='#Games'">Games</button>
-        <button class="tablinks" onclick="location.href='#Books'">Books</button>
-    </div>
+
+
+
+<div class="container" style="margin-right: 220px;"> <!-- Adjust margin-right to accommodate side navbar width -->
 
     <!-- Title -->
     <h1>Media</h1>
     <p>Music, TV and Movies I'm Loving - May, 2024 </p>
 
     <!-- Music Section -->
-    <div id="Music" class="tabcontent">
+    <div id="Music" class="tabcontent clearfix">
         <h2>Music</h2>
         <!-- Your music content here -->
         <div class="row">
@@ -260,7 +288,7 @@
     </div>
 
     <!-- TV Section -->
-    <div id="TV" class="tabcontent">
+    <div id="TV" class="tabcontent clearfix">
         <h2>TV</h2>
         <!-- Your TV content here -->
         <div class="row">
@@ -292,7 +320,7 @@
     </div>
 
     <!-- Movies Section -->
-    <div id="Movies" class="tabcontent">
+    <div id="Movies" class="tabcontent clearfix">
         <h2>Movies</h2>
         <!-- Your movies content here -->
         <div class="row">
@@ -324,7 +352,7 @@
     </div>
 
     <!-- Games Section -->
-    <div id="Games" class="tabcontent">
+    <div id="Games" class="tabcontent clearfix">
         <h2>Games</h2>
         <!-- Your games content here -->
         <div class="row">
@@ -356,7 +384,7 @@
     </div>
 
     <!-- Books Section -->
-    <div id="Books" class="tabcontent">
+    <div id="Books" class="tabcontent clearfix">
         <h2>Books</h2>
         <!-- Your books content here -->
         <div class="row">
