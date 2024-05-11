@@ -23,11 +23,16 @@
 
         // Create particle geometry and material
         const particleGeometry = new THREE.SphereGeometry(0.1, 32, 32);
-        const particleMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+        const greyMaterial = new THREE.MeshBasicMaterial({ color: 0x888888 });
+        const blackMaterial = new THREE.MeshBasicMaterial({ color: 0x000000 });
+        const yellowMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
 
         // Create particle system
         const numParticles = 100;
         const particles = [];
+        const greyParticles = [];
+        const blackParticles = [];
+        const yellowGreyParticles = [];
 
         // Create random initial velocities for particles
         const velocities = [];
@@ -40,12 +45,29 @@
         }
 
         for (let i = 0; i < numParticles; i++) {
-            const particle = new THREE.Mesh(particleGeometry, particleMaterial);
-            particle.position.x = Math.random() * 20 - 10;
-            particle.position.y = Math.random() * 20 - 10;
-            particle.position.z = Math.random() * 20 - 10;
-            particles.push(particle);
-            scene.add(particle);
+            // Grey particles
+            const greyParticle = new THREE.Mesh(particleGeometry, greyMaterial);
+            greyParticle.position.x = Math.random() * 20 - 10;
+            greyParticle.position.y = Math.random() * 20 - 10;
+            greyParticle.position.z = Math.random() * 20 - 10;
+            greyParticles.push(greyParticle);
+            scene.add(greyParticle);
+
+            // Black particles
+            const blackParticle = new THREE.Mesh(particleGeometry, blackMaterial);
+            blackParticle.position.x = Math.random() * 20 - 10;
+            blackParticle.position.y = Math.random() * 20 - 10;
+            blackParticle.position.z = Math.random() * 20 - 10;
+            blackParticles.push(blackParticle);
+            scene.add(blackParticle);
+
+            // Yellow to Grey particles
+            const yellowGreyParticle = new THREE.Mesh(particleGeometry, yellowMaterial);
+            yellowGreyParticle.position.x = Math.random() * 20 - 10;
+            yellowGreyParticle.position.y = Math.random() * 20 - 10;
+            yellowGreyParticle.position.z = Math.random() * 20 - 10;
+            yellowGreyParticles.push(yellowGreyParticle);
+            scene.add(yellowGreyParticle);
         }
 
         // Set up camera
@@ -66,6 +88,12 @@
                 if (particle.position.z < -10) particle.position.z = 10;
                 if (particle.position.z > 10) particle.position.z = -10;
             });
+
+            // Update yellow-grey particles color
+            yellowGreyParticles.forEach(particle => {
+                particle.material.color.lerp(new THREE.Color(0x888888), 0.01); // Lerp towards grey
+            });
+
             renderer.render(scene, camera);
         }
 
