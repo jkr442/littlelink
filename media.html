@@ -37,11 +37,11 @@
         .row {
           display: flex; /* Use flexbox to create a flexible layout */
           flex-wrap: wrap; /* Allow the columns to wrap to the next line if needed */
-          margin: 0 -10px; /* Add negative margin to counteract the padding applied to each column */
+          margin: 0 ; /* Add negative margin to counteract the padding applied to each column */
         }
     
         .column {
-          flex: 0 0 calc(33.33% - 20px); /* Set each column to one-third of the container width with 10px padding on each side */
+          flex: 0 0 calc(33.33%); /* Set each column to one-third of the container width with 10px padding on each side */
           box-sizing: border-box; /* Include padding and border in the column's total width */
           padding: 0 10px; /* Add some horizontal padding to the columns */
         }
@@ -91,99 +91,102 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div class="row">
-      <div class="column" style="margin-top: 10%">
+<div class="row">
+    <div class="column" style="margin-top: 10%">
         <!-- Title -->
         <h1>Media</h1>
         <p>Music, TV and Movies I'm Loving - May, 2024 </p>
         <h2>Music</h2>
         <div class="row">
             <div class="column">
-                <img src="images/media/music/tiamd.webp" alt="This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'" style="width:100%">
+                <img src="images/media/music/tiamd.webp"
+                    alt="This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'" style="width:100%">
                 <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
                 <h4>Hypnotic Brass Ensemble</h4>
                 <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
-              </div>
-          <div class="column">
-            <img src="music_image_2.jpg" alt="Music Image 2" style="width:100%">
-            <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
-            <h4>Hypnotic Brass Ensemble</h4>
-            <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
-          </div>
-          <div class="column">
-            <img src="music_image_3.jpg" alt="Music Image 3" style="width:100%">
-            <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
-            <h4>Hypnotic Brass Ensemble</h4>
-            <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
-          </div>
+            </div>
+            <div class="column">
+                <img src="music_image_2.jpg" alt="Music Image 2" style="width:100%">
+                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+            </div>
+            <div class="column">
+                <img src="music_image_3.jpg" alt="Music Image 3" style="width:100%">
+                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+            </div>
         </div>
-  
+
         <h2>TV</h2>
         <div class="row">
-          <div class="column">
-            <img src="tv_image_1.jpg" alt="TV Image 1" style="width:100%">
-            <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
-            <h4>Hypnotic Brass Ensemble</h4>
-            <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
-          </div>
-          <div class="column">
-            <img src="tv_image_2.jpg" alt="TV Image 2" style="width:100%">
-            <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
-            <h4>Hypnotic Brass Ensemble</h4>
-            <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
-          </div>
-          <div class="column">
-            <img src="tv_image_3.jpg" alt="TV Image 3" style="width:100%">
-            <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
-            <h4>Hypnotic Brass Ensemble</h4>
-            <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
-          </div>
+            <div class="column">
+                <img src="tv_image_1.jpg" alt="TV Image 1" style="width:100%">
+                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+            </div>
+            <div class="column">
+                <img src="tv_image_2.jpg" alt="TV Image 2" style="width:100%">
+                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+            </div>
+            <div class="column">
+                <img src="tv_image_3.jpg" alt="TV Image 3" style="width:100%">
+                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+            </div>
         </div>
-        
+
         <h2>Movies</h2>
         <div class="row">
-          <div class="column">
-            <img src="movie_image_1.jpg" alt="Movie Image 1" style="width:100%">
-            <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
-            <h4>Hypnotic Brass Ensemble</h4>
-            <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
-          </div>
-          <div class="column">
-            <img src="movie_image_2.jpg" alt="Movie Image 2" style="width:100%">
-            <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
-            <h4>Hypnotic Brass Ensemble</h4>
-            <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
-          </div>
-          <div class="column">
-            <img src="movie_image_3.jpg" alt="Movie Image 3" style="width:100%">
-            <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
-            <h4>Hypnotic Brass Ensemble</h4>
-            <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
-          </div>
+            <div class="column">
+                <img src="movie_image_1.jpg" alt="Movie Image 1" style="width:100%">
+                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+            </div>
+            <div class="column">
+                <img src="movie_image_2.jpg" alt="Movie Image 2" style="width:100%">
+                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+            </div>
+            <div class="column">
+                <img src="movie_image_3.jpg" alt="Movie Image 3" style="width:100%">
+                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+            </div>
         </div>
         <br>
-      </div>
     </div>
-  </div>
+</div>
+</div>
 
-  <!-- Footer
+<!-- Footer
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <footer style="bottom: 0; width: 100%; height: 50px; color: #D8DEE9; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+<footer
+    style="bottom: 0; width: 100%; height: 50px; color: #D8DEE9; text-align: center; display: flex; flex-direction: column; justify-content: center;">
     <div class="row">
-      <div class="column">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <p style="font-size: 75%;">© 2023 Jourdan Keillor · <a href="privacy.html">Privacy</a>
-        <br>Powered by <a href="https://vercel.com/">Vercel</a> and forked from <a href="https://littlelink.io/">LittleLink</a></p>
-      </div>
-      </div>
-    </footer>
+        <div class="column">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p style="font-size: 75%;">© 2023 Jourdan Keillor · <a href="privacy.html">Privacy</a>
+                <br>Powered by <a href="https://vercel.com/">Vercel</a> and forked from <a
+                    href="https://littlelink.io/">LittleLink</a>
+            </p>
+        </div>
+    </div>
+</footer>
 
-  <!-- End Document
+<!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 
