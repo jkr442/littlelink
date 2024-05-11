@@ -29,6 +29,16 @@
         const numParticles = 100;
         const particles = [];
 
+        // Create random initial velocities for particles
+        const velocities = [];
+        for (let i = 0; i < numParticles; i++) {
+            velocities.push(new THREE.Vector3(
+                Math.random() * 0.02 - 0.01, // x
+                Math.random() * 0.02 - 0.01, // y
+                Math.random() * 0.02 - 0.01  // z
+            ));
+        }
+
         for (let i = 0; i < numParticles; i++) {
             const particle = new THREE.Mesh(particleGeometry, particleMaterial);
             particle.position.x = Math.random() * 20 - 10;
@@ -44,11 +54,9 @@
         // Animation loop
         function animate() {
             requestAnimationFrame(animate);
-            particles.forEach(particle => {
-                // Update particle positions with slower movement
-                particle.position.x += Math.random() * 0.01 - 0.005;
-                particle.position.y += Math.random() * 0.01 - 0.005;
-                particle.position.z += Math.random() * 0.01 - 0.005;
+            particles.forEach((particle, index) => {
+                // Update particle positions with assigned velocities
+                particle.position.add(velocities[index]);
 
                 // Wrap particles around the screen
                 if (particle.position.x < -10) particle.position.x = 10;
