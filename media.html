@@ -179,11 +179,11 @@
   <!-- Unique side navbar -->
   <nav class="side-navbar">
     <div class="tab">
-        <button class="tablinks" onclick="scrollToSection('Music')">Music</button>
-        <button class="tablinks" onclick="scrollToSection('TV')">TV</button>
-        <button class="tablinks" onclick="scrollToSection('Movies')">Movies</button>
-        <button class="tablinks" onclick="scrollToSection('Games')">Games</button>
-        <button class="tablinks" onclick="scrollToSection('Books')">Books</button>
+        <button class="tablinks" data-section="Music" onclick="scrollToSection('Music')">Music</button>
+        <button class="tablinks" data-section="TV" onclick="scrollToSection('TV')">TV</button>
+        <button class="tablinks" data-section="Movies" onclick="scrollToSection('Movies')">Movies</button>
+        <button class="tablinks" data-section="Games" onclick="scrollToSection('Games')">Games</button>
+        <button class="tablinks" data-section="Books" onclick="scrollToSection('Books')">Books</button>
     </div>
     </nav>
 
@@ -197,7 +197,7 @@
     <p>Music, TV and Movies I'm Loving - May, 2024 </p>
 
     <!-- Music Section -->
-    <div id="Music" class="tabcontent clearfix">
+    <section id="Music">
         <h2>Music</h2>
         <!-- Your music content here -->
         <div class="row">
@@ -259,10 +259,10 @@
                 <h4>Hyperdrama (2024) - Justice</h4>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- TV Section -->
-    <div id="TV" class="tabcontent clearfix">
+    <section id="TV">
         <h2>TV</h2>
         <!-- Your TV content here -->
         <div class="row">
@@ -291,10 +291,10 @@
                 <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Movies Section -->
-    <div id="Movies" class="tabcontent clearfix">
+    <section id="Movies">
         <h2>Movies</h2>
         <!-- Your movies content here -->
         <div class="row">
@@ -323,10 +323,10 @@
                 <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Games Section -->
-    <div id="Games" class="tabcontent clearfix">
+    <section id="Games">
         <h2>Games</h2>
         <!-- Your games content here -->
         <div class="row">
@@ -355,10 +355,10 @@
                 <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Books Section -->
-    <div id="Books" class="tabcontent clearfix">
+    <section id="Books">
         <h2>Books</h2>
         <!-- Your books content here -->
         <div class="row">
@@ -387,7 +387,7 @@
                 <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
             </div>
         </div>
-    </div>
+    </section>
 </div>
 
 <!-- Footer
@@ -415,6 +415,25 @@
         const section = document.getElementById(sectionId);
         section.scrollIntoView({ behavior: 'smooth' });
     }
+
+    // Function to highlight the tab when its associated section comes into view
+    document.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('section');
+        const scrollPosition = window.scrollY;
+
+        sections.forEach(function(section) {
+            if (scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
+                const sectionId = section.getAttribute('id');
+                const tab = document.querySelector('.tab button[data-section="' + sectionId + '"]');
+                if (tab) {
+                    document.querySelectorAll('.tab button').forEach(function(btn) {
+                        btn.classList.remove('active');
+                    });
+                    tab.classList.add('active');
+                }
+            }
+        });
+    });
 </script>
 
 <!-- End Document
