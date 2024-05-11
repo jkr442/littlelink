@@ -8,7 +8,7 @@
         body {
             margin: 0;
             overflow: hidden;
-            background: url('images/stonetile.jpg') no-repeat center center fixed;
+            background: url('stonetile.jpg') no-repeat center center fixed;
             background-size: cover;
             background-color: #30073c; /* Fallback color */
             background-image: radial-gradient(circle, #30073c, #1c090e); /* Gradient for browsers that support it */
@@ -25,100 +25,76 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
-        // Create particle geometry and material
-        const particleGeometry = new THREE.SphereGeometry(0.1, 32, 32);
-        const particleMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
-        const greyParticleMaterial = new THREE.MeshBasicMaterial({ color: 0x888888 });
-        const orangeParticleMaterial = new THREE.MeshBasicMaterial({ color: 0xffa500 });
+        // Define custom shader for glowing effect
+        const customVertexShader = `
+            uniform float amplitude;
+            attribute float size;
+            attribute vec3 customColor;
+            varying vec3 vColor;
+            void main() {
+                vColor = customColor;
+                vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+                gl_PointSize = size * (300.0 / -mvPosition.z);
+                gl_Position = projectionMatrix * mvPosition;
+            }
+        `;
 
-        // Create particle systems
-        const numParticles = 10000;
-        const particles = [];
-        const greyParticles = [];
-        const orangeParticles = [];
+        const customFragmentShader = `
+            uniform vec3 color;
+            varying vec3 vColor;
+            void main() {
+                if (length(gl_PointCoord - vec2(0.5, 0.5)) > 0.5) discard;
+                gl_FragColor = vec4(color * vColor, 1.0);
+            }
+        `;
 
-        // Create random initial velocities for particles
-        const velocities = [];
+        // Create particle geometry
+        const particleGeometry = new THREE.BufferGeometry();
+        const positions = [];
+        const colors = [];
+        const sizes = [];
+
+        // Add particles
+        const numParticles = 1000;
         for (let i = 0; i < numParticles; i++) {
-            velocities.push(new THREE.Vector3(
-                Math.random() * 0.02 - 0.01, // x
-                Math.random() * 0.02 - 0.01, // y
-                Math.random() * 0.02 - 0.01  // z
-            ));
+            positions.push((Math.random() - 0.5) * 100);
+            positions.push((Math.random() - 0.5) * 100);
+            positions.push((Math.random() - 0.5) * 100);
+
+            const color = new THREE.Color(0xffffff);
+            color.setHSL(i / numParticles, 1.0, 0.5);
+            colors.push(color.r, color.g, color.b);
+
+            sizes.push(10);
         }
 
-        // Create particles for layer 1 (yellow)
-        for (let i = 0; i < numParticles; i++) {
-            const particle = new THREE.Mesh(particleGeometry, particleMaterial);
-            particle.position.x = Math.random() * 20 - 10;
-            particle.position.y = Math.random() * 20 - 10;
-            particle.position.z = Math.random() * 20 - 10;
-            particles.push(particle);
-            scene.add(particle);
-        }
+        particleGeometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+        particleGeometry.setAttribute('customColor', new THREE.Float32BufferAttribute(colors, 3));
+        particleGeometry.setAttribute('size', new THREE.Float32BufferAttribute(sizes, 1));
 
-        // Create particles for layer 2 (grey)
-        for (let i = 0; i < numParticles; i++) {
-            const particle = new THREE.Mesh(particleGeometry, greyParticleMaterial);
-            particle.position.x = Math.random() * 30 - 15;
-            particle.position.y = Math.random() * 30 - 15;
-            particle.position.z = Math.random() * 30 - 15;
-            greyParticles.push(particle);
-            scene.add(particle);
-        }
+        // Create particle material
+        const particleMaterial = new THREE.ShaderMaterial({
+            uniforms: {
+                amplitude: { value: 1.0 },
+                color: { value: new THREE.Color(0xffa500) }
+            },
+            vertexShader: customVertexShader,
+            fragmentShader: customFragmentShader,
+            blending: THREE.AdditiveBlending,
+            depthTest: false,
+            transparent: true
+        });
 
-        // Create particles for layer 3 (orange)
-        for (let i = 0; i < numParticles; i++) {
-            const particle = new THREE.Mesh(particleGeometry, orangeParticleMaterial);
-            particle.position.x = Math.random() * 40 - 20;
-            particle.position.y = Math.random() * 40 - 20;
-            particle.position.z = Math.random() * 40 - 20;
-            orangeParticles.push(particle);
-            scene.add(particle);
-        }
+        // Create particle system
+        const particleSystem = new THREE.Points(particleGeometry, particleMaterial);
+        scene.add(particleSystem);
 
         // Set up camera
-        camera.position.z = 5;
+        camera.position.z = 100;
 
         // Animation loop
         function animate() {
             requestAnimationFrame(animate);
-            particles.forEach((particle, index) => {
-                // Update particle positions with assigned velocities
-                particle.position.add(velocities[index]);
-
-                // Wrap particles around the screen
-                if (particle.position.x < -10) particle.position.x = 10;
-                if (particle.position.x > 10) particle.position.x = -10;
-                if (particle.position.y < -10) particle.position.y = 10;
-                if (particle.position.y > 10) particle.position.y = -10;
-                if (particle.position.z < -10) particle.position.z = 10;
-                if (particle.position.z > 10) particle.position.z = -10;
-            });
-            greyParticles.forEach((particle, index) => {
-                // Update particle positions with assigned velocities
-                particle.position.add(velocities[index]);
-
-                // Wrap particles around the screen
-                if (particle.position.x < -15) particle.position.x = 15;
-                if (particle.position.x > 15) particle.position.x = -15;
-                if (particle.position.y < -15) particle.position.y = 15;
-                if (particle.position.y > 15) particle.position.y = -15;
-                if (particle.position.z < -15) particle.position.z = 15;
-                if (particle.position.z > 15) particle.position.z = -15;
-            });
-            orangeParticles.forEach((particle, index) => {
-                // Update particle positions with assigned velocities
-                particle.position.add(velocities[index]);
-
-                // Wrap particles around the screen
-                if (particle.position.x < -20) particle.position.x = 20;
-                if (particle.position.x > 20) particle.position.x = -20;
-                if (particle.position.y < -20) particle.position.y = 20;
-                if (particle.position.y > 20) particle.position.y = -20;
-                if (particle.position.z < -20) particle.position.z = 20;
-                if (particle.position.z > 20) particle.position.z = -20;
-            });
             renderer.render(scene, camera);
         }
 
