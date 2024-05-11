@@ -92,6 +92,43 @@
             padding: 0;
           }
         }
+
+        /* Style the tab buttons */
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
       </style>
 
   <!-- Favicon
@@ -132,146 +169,212 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<div class="container">
+
+  <div class="container">
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Music')">Music</button>
+        <button class="tablinks" onclick="openTab(event, 'TV')">TV</button>
+        <button class="tablinks" onclick="openTab(event, 'Movies')">Movies</button>
+        <button class="tablinks" onclick="openTab(event, 'Games')">Games</button>
+        <button class="tablinks" onclick="openTab(event, 'Books')">Books</button>
+    </div>
+
     <!-- Title -->
     <h1>Media</h1>
     <p>Music, TV and Movies I'm Loving - May, 2024 </p>
-    <h2>Music</h2>
-    <div class="row">
-        <div class="column">
-            <div class="image-container">
+
+    <!-- Music Section -->
+    <div id="Music" class="tabcontent">
+        <h2>Music</h2>
+        <!-- Your music content here -->
+        <div class="row">
+            <div class="column">
+                <div class="image-container">
+                    <a href="https://hypn0ticbrass.bandcamp.com/album/this-is-a-mindfulness-drill-a-reimagining-of-richard-youngs-sapphie">
+                        <img src="images/media/music/tiamd.webp" alt="This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie' (2021)">
+                    </a>
+                </div>
                 <a href="https://hypn0ticbrass.bandcamp.com/album/this-is-a-mindfulness-drill-a-reimagining-of-richard-youngs-sapphie">
-                    <img src="images/media/music/tiamd.webp" alt="This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie' (2021)">
+                    <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie' (2021)</h3>
                 </a>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
             </div>
-            <a href="https://hypn0ticbrass.bandcamp.com/album/this-is-a-mindfulness-drill-a-reimagining-of-richard-youngs-sapphie">
-                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie' (2021)</h3>
-            </a>
-            <h4>Hypnotic Brass Ensemble</h4>
-            <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
-        </div>
-        <div class="column">
-            <div class="image-container">
+            <div class="column">
+                <div class="image-container">
+                    <a href="https://futureislands.bandcamp.com/album/people-who-aren-t-there-anymore">
+                        <img src="images/media/music/pwata.webp" alt="People Who Aren’t There Anymore (2024)">
+                    </a>
+                </div>
                 <a href="https://futureislands.bandcamp.com/album/people-who-aren-t-there-anymore">
-                    <img src="images/media/music/pwata.webp" alt="People Who Aren’t There Anymore (2024)">
+                    <h3>People Who Aren’t There Anymore (2024)</h3>
                 </a>
+                <h4>Future Islands</h4>
+                <p>this album has copped a bit of flak online, but it's a solid Future Islands record to me</p>
             </div>
-            <a href="https://futureislands.bandcamp.com/album/people-who-aren-t-there-anymore">
-                <h3>People Who Aren’t There Anymore (2024)</h3>
-            </a>
-            <h4>Future Islands</h4>
-            <p>this album has copped a bit of flak online, but it's a solid Future Islands record to me</p>
-        </div>
-        <div class="column">
-            <div class="image-container">
+            <div class="column">
+                <div class="image-container">
+                    <a href="https://kamasiwashington.bandcamp.com/album/fearless-movement">
+                        <img src="images/media/music/fmove.webp" alt="Fearless Movement (2024)">
+                    </a>
+                </div>
                 <a href="https://kamasiwashington.bandcamp.com/album/fearless-movement">
-                    <img src="images/media/music/fmove.webp" alt="Fearless Movement (2024)">
+                    <h3>Fearless Movement (2024)</h3>
                 </a>
+                <h4>Kamasi Washington</h4>
+                <p>huge record with so many different movements, arrangements, and feelings</p>
             </div>
-            <a href="https://kamasiwashington.bandcamp.com/album/fearless-movement">
-                <h3>Fearless Movement (2024)</h3>
-            </a>
-            <h4>Kamasi Washington</h4>
-            <p>huge record with so many different movements, arrangements, and feelings</p>
-        </div>
-    </div>    
-    <h2>Also in Rotation</h2>
-    <div class="row">
-        <div class="column">
-            <div class="image-container">
-                <img src="images/media/music/funde.webp" alt="Filthy Underneath (2024)">
+        </div>    
+        <h2>Also in Rotation</h2>
+        <div class="row">
+            <div class="column">
+                <div class="image-container">
+                    <img src="images/media/music/funde.webp" alt="Filthy Underneath (2024)">
+                </div>
+                <h4>Filthy Underneath (2024) - Nadine Shah</h4>
             </div>
-            <h4>Filthy Underneath (2024) - Nadine Shah</h4>
-        </div>
-        <div class="column">
-            <div class="image-container">
-                <img src="images/media/music/hovvd.webp" alt="Hovvdy (2024)">
+            <div class="column">
+                <div class="image-container">
+                    <img src="images/media/music/hovvd.webp" alt="Hovvdy (2024)">
+                </div>
+                <h4>Hovvdy (2024) - Hovvdy</h4>
             </div>
-            <h4>Hovvdy (2024) - Hovvdy</h4>
-        </div>
-        <div class="column">
-            <div class="image-container">
-                <img src="images/media/music/hyper.webp" alt="Hyperdrama (2024)">
+            <div class="column">
+                <div class="image-container">
+                    <img src="images/media/music/hyper.webp" alt="Hyperdrama (2024)">
+                </div>
+                <h4>Hyperdrama (2024) - Justice</h4>
             </div>
-            <h4>Hyperdrama (2024) - Justice</h4>
-        </div>
-    </div>
-    <div class="row">
-        <div class="column">
-            <div class="image-container">
-                <img src="images/media/music/tangk.webp" alt="Tangk (2024)">
-            </div>
-            <h4>Tangk (2024) - Idles</h4>
-        </div>
-        <div class="column">
-            <div class="image-container">
-                <img src="images/media/music/wmuto.webp" alt="Where's My Utopia? (2024)">
-            </div>
-            <h4>Where's My Utopia? (2024) - Yard Act</h4>
-        </div>
-        <div class="column">
-            <div class="image-container">
-                <img src="images/media/music/ok.webp" alt="O.K. (2015)">
-            </div>
-            <h4>O.K. (2015) - Kool A.D.</h4>
-        </div>
-    </div>
-    <h2>TV</h2>
-    <div class="row">
-        <div class="column">
-            <div class="image-container">
-                <img src="tv_image_1.jpg" alt="TV Image 1">
-            </div>
-            <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
-            <h4>Hypnotic Brass Ensemble</h4>
-            <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
-        </div>
-        <div class="column">
-            <div class="image-container">
-                <img src="tv_image_2.jpg" alt="TV Image 2">
-            </div>
-            <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
-            <h4>Hypnotic Brass Ensemble</h4>
-            <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
-        </div>
-        <div class="column">
-            <div class="image-container">
-                <img src="tv_image_3.jpg" alt="TV Image 3">
-            </div>
-            <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
-            <h4>Hypnotic Brass Ensemble</h4>
-            <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
         </div>
     </div>
 
-    <h2>Movies</h2>
-    <div class="row">
-        <div class="column">
-            <div class="image-container">
-                <img src="movie_image_1.jpg" alt="Movie Image 1">
+    <!-- TV Section -->
+    <div id="TV" class="tabcontent">
+        <h2>TV</h2>
+        <!-- Your TV content here -->
+        <div class="row">
+            <div class="column">
+                <div class="image-container">
+                    <img src="tv_image_1.jpg" alt="TV Image 1">
+                </div>
+                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
             </div>
-            <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
-            <h4>Hypnotic Brass Ensemble</h4>
-            <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
-        </div>
-        <div class="column">
-            <div class="image-container">
-                <img src="movie_image_2.jpg" alt="Movie Image 2">
+            <div class="column">
+                <div class="image-container">
+                    <img src="tv_image_2.jpg" alt="TV Image 2">
+                </div>
+                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
             </div>
-            <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
-            <h4>Hypnotic Brass Ensemble</h4>
-            <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
-        </div>
-        <div class="column">
-            <div class="image-container">
-                <img src="movie_image_3.jpg" alt="Movie Image 3">
+            <div class="column">
+                <div class="image-container">
+                    <img src="tv_image_3.jpg" alt="TV Image 3">
+                </div>
+                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
             </div>
-            <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
-            <h4>Hypnotic Brass Ensemble</h4>
-            <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
         </div>
     </div>
-</div>
+
+    <!-- Movies Section -->
+    <div id="Movies" class="tabcontent">
+        <h2>Movies</h2>
+        <!-- Your movies content here -->
+        <div class="row">
+            <div class="column">
+                <div class="image-container">
+                    <img src="movie_image_1.jpg" alt="Movie Image 1">
+                </div>
+                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+            </div>
+            <div class="column">
+                <div class="image-container">
+                    <img src="movie_image_2.jpg" alt="Movie Image 2">
+                </div>
+                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+            </div>
+            <div class="column">
+                <div class="image-container">
+                    <img src="movie_image_3.jpg" alt="Movie Image 3">
+                </div>
+                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Games Section -->
+    <div id="Games" class="tabcontent">
+        <h2>Games</h2>
+        <!-- Your games content here -->
+        <div class="row">
+            <div class="column">
+                <div class="image-container">
+                    <img src="movie_image_1.jpg" alt="Movie Image 1">
+                </div>
+                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+            </div>
+            <div class="column">
+                <div class="image-container">
+                    <img src="movie_image_2.jpg" alt="Movie Image 2">
+                </div>
+                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+            </div>
+            <div class="column">
+                <div class="image-container">
+                    <img src="movie_image_3.jpg" alt="Movie Image 3">
+                </div>
+                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Books Section -->
+    <div id="Books" class="tabcontent">
+        <h2>Books</h2>
+        <!-- Your books content here -->
+        <div class="row">
+            <div class="column">
+                <div class="image-container">
+                    <img src="movie_image_1.jpg" alt="Movie Image 1">
+                </div>
+                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+            </div>
+            <div class="column">
+                <div class="image-container">
+                    <img src="movie_image_2.jpg" alt="Movie Image 2">
+                </div>
+                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+            </div>
+            <div class="column">
+                <div class="image-container">
+                    <img src="movie_image_3.jpg" alt="Movie Image 3">
+                </div>
+                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Footer
