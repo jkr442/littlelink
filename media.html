@@ -35,14 +35,15 @@
 
     <style>
         .row {
-          margin: 0 -5px; /* Add negative margin to counteract the padding applied to each column */
+          margin: 0 -10px; /* Add negative margin to counteract the padding applied to each column */
+          overflow: hidden; /* Clear floats */
         }
     
         .column {
-          width: calc(33.33% - 10px); /* Set each column to one-third of the container width with 10px padding on each side */
+          width: calc(33.33% - 20px); /* Set each column to one-third of the container width with 10px padding on each side */
           float: left; /* Float the columns left to allow them to sit next to each other */
           box-sizing: border-box; /* Include padding and border in the column's total width */
-          padding: 0 5px; /* Add some horizontal padding to the columns */
+          padding: 0 10px; /* Add some horizontal padding to the columns */
         }
     
         /* Ensure images are responsive */
