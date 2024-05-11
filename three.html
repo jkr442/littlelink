@@ -32,6 +32,7 @@
         const particles = [];
         const greyParticles = [];
         const blackParticles = [];
+        const yellowParticles = [];
         const yellowGreyParticles = [];
 
         // Create random initial velocities for particles
@@ -61,6 +62,14 @@
             blackParticles.push(blackParticle);
             scene.add(blackParticle);
 
+            // Yellow particles
+            const yellowParticle = new THREE.Mesh(particleGeometry, yellowMaterial);
+            yellowParticle.position.x = Math.random() * 20 - 10;
+            yellowParticle.position.y = Math.random() * 20 - 10;
+            yellowParticle.position.z = Math.random() * 20 - 10;
+            yellowParticles.push(yellowParticle);
+            scene.add(yellowParticle);
+
             // Yellow to Grey particles
             const yellowGreyParticle = new THREE.Mesh(particleGeometry, yellowMaterial);
             yellowGreyParticle.position.x = Math.random() * 20 - 10;
@@ -89,8 +98,19 @@
                 if (particle.position.z > 10) particle.position.z = -10;
             });
 
-            // Update yellow-grey particles color
-            yellowGreyParticles.forEach(particle => {
+            // Update yellow-grey particles position and color
+            yellowGreyParticles.forEach((particle, index) => {
+                // Update particle position
+                particle.position.add(velocities[index]);
+
+                // Wrap particles around the screen
+                if (particle.position.x < -10) particle.position.x = 10;
+                if (particle.position.x > 10) particle.position.x = -10;
+                if (particle.position.y < -10) particle.position.y = 10;
+                if (particle.position.y > 10) particle.position.y = -10;
+                if (particle.position.z < -10) particle.position.z = 10;
+                if (particle.position.z > 10) particle.position.z = -10;
+
                 // Randomly switch between yellow and grey
                 const randomColor = Math.random() < 0.5 ? 0xffff00 : 0x888888;
                 particle.material.color.set(randomColor);
