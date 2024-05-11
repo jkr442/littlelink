@@ -35,7 +35,18 @@
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/avatar1.jpg">
-
+  
+  <style>
+    canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensure the canvas is behind other content */
+    width: 100%;
+    height: 100%;
+    filter: blur(10px);
+    }
+  </style>
 </head>
 
 <body>
@@ -68,6 +79,10 @@
     </ul>
     </div>
   </nav>
+
+  <canvas id="canvas"></canvas>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="four.js"></script>
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->

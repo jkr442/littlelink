@@ -1,9 +1,8 @@
 // Set up Three.js scene
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer();
+const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("canvas") });
 renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
 
 // Define custom shader for glowing effect with procedural noise texture
 const customVertexShader = `
@@ -63,12 +62,16 @@ const sizes = [];
 // Add particles
 const numParticles = 666;
 for (let i = 0; i < numParticles; i++) {
+    addParticle();
+}
+
+function addParticle() {
     positions.push((Math.random() - 0.5) * 100);
     positions.push((Math.random() - 0.5) * 100);
     positions.push((Math.random() - 0.5) * 100);
 
     const color = new THREE.Color(0xffffff);
-    color.setHSL(i / numParticles, 1.0, 0.5);
+    color.setHSL(Math.random(), 1.0, 0.5);
     colors.push(color.r, color.g, color.b);
 
     sizes.push(5); // Decreased particle size
@@ -102,13 +105,25 @@ camera.position.z = 100;
 function animate() {
     requestAnimationFrame(animate);
     
-    // Move particles toward the camera
-    const time = Date.now() * 0.00005;
+    // Move particles toward the camera and spawn new particles
+    const time = Date.now() * 0.0005;
     const particlePositions = particleGeometry.attributes.position.array;
     for (let i = 0; i < particlePositions.length; i += 3) {
-        particlePositions[i] += Math.sin(time) * 0.1;
-        particlePositions[i + 1] += Math.cos(time) * 0.1;
-        particlePositions[i + 2] += -0.1; // Move particles slightly toward the camera
+        // Move particles towards the camera
+        particlePositions[i + 2] += -0.25; // Move particles slightly toward the camera
+        
+        // Spawn new particles
+        if (particlePositions[i + 2] < -50) {
+            // Reset position
+            particlePositions[i] = (Math.random() - 0.5) * 100;
+            particlePositions[i + 1] = (Math.random() - 0.5) * 100;
+            particlePositions[i + 2] = 1;
+            
+            // Randomize color
+            const color = new THREE.Color(0xffffff);
+            color.setHSL(Math.random(), 1.0, 0.5);
+            particleGeometry.attributes.customColor.setXYZ(i / 3, color.r, color.g, color.b);
+        }
     }
     particleGeometry.attributes.position.needsUpdate = true;
     
