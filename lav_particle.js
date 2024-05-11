@@ -178,6 +178,9 @@ document.addEventListener('DOMContentLoaded', function() {
             particle.update(particles, hazeParticles);
         }
     }
+    
+    // Reset the globalAlpha to restore full brightness for other canvas elements
+    ctx.globalAlpha = 0.75;
 
     animate(); // Start animation loop after DOMContentLoaded
 });
