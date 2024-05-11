@@ -34,12 +34,20 @@
     <script src="./navbar.js"></script>
 
     <style>
+        /* Container style */
+        .image-container {
+        display: flex; /* Use flexbox to arrange images horizontally */
+        flex-wrap: wrap; /* Allow images to wrap to the next row if needed */
+        justify-content: space-between; /* Space out images evenly */
+        max-width: 1000px; /* Set maximum width of the container */
+        margin: 0 auto; /* Center the container horizontally */
+        padding: 20px; /* Add some padding around the container */
+        }
         /* Adjust the width of the images to fit three in a row */
-        img {
-          max-width: 30%; /* Set the maximum width of each image to 30% of the container */
-          height: auto; /* Ensure the height adjusts proportionally based on the width */
-          display: block; /* Ensure images are displayed as block elements */
-          margin: 0 auto; /* Center align the images */
+        .image-container img {
+        width: calc(33.33% - 20px); /* Calculate width for three images with some spacing between */
+        margin-bottom: 20px; /* Add some spacing between images vertically */
+        object-fit: cover; /* Ensure images maintain their aspect ratio and cover the container */
         }
       </style>
 
