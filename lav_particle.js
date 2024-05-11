@@ -127,14 +127,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Create particles
     const particles = [];
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 75; i++) {
         particles.push(new Particle());
     }
 
     // Function to draw haze or smoke
     function drawHaze() {
         const hazeParticles = [];
-        for (let i = 0; i < 1000; i++) {
+        for (let i = 0; i < 500; i++) {
             const x = Math.random() * canvas.width;
             const y = Math.random() * canvas.height;
             const radius = Math.random() * 1/2;
