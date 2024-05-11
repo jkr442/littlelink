@@ -35,13 +35,13 @@
 
     <style>
         .row {
+          display: flex; /* Use flexbox to create a flexible layout */
+          flex-wrap: wrap; /* Allow the columns to wrap to the next line if needed */
           margin: 0 -10px; /* Add negative margin to counteract the padding applied to each column */
-          overflow: hidden; /* Clear floats */
         }
     
         .column {
-          width: calc(33.33% - 20px); /* Set each column to one-third of the container width with 10px padding on each side */
-          float: left; /* Float the columns left to allow them to sit next to each other */
+          flex: 0 0 calc(33.33% - 20px); /* Set each column to one-third of the container width with 10px padding on each side */
           box-sizing: border-box; /* Include padding and border in the column's total width */
           padding: 0 10px; /* Add some horizontal padding to the columns */
         }
@@ -51,7 +51,7 @@
           max-width: 100%; /* Set the maximum width of the image to 100% of its container */
           height: auto; /* Allow the image height to adjust proportionally */
         }
-    </style>
+      </style>
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
