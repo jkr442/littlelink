@@ -93,12 +93,18 @@
           }
         }
 
-        /* Style the tab buttons */
-        .tab {
-            margin-right: 20px; /* Add some space between tabs */
+        /* Style the side navbar */
+        .side-navbar {
+            position: fixed;
+            right: 0; /* Align to the right side */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Adjust to center */
+            padding-top: 60px; /* Adjust according to your navbar height */
+            width: auto; /* Adjust width dynamically */
+            overflow-y: auto;
         }
 
-        /* Style the buttons inside the tab */
+        /* Style the tab buttons */
         .tab button {
             display: block;
             background-color: transparent; /* Removed background color */
@@ -118,40 +124,19 @@
             background-color: #ddd;
         }
 
-        /* Create an active/current tablink class */
+        /* Style the active/current tablink */
         .tab button.active {
             background-color: #ccc;
         }
 
-        /* Style the tab content */
-        .tabcontent {
-            display: block; /* Display all content by default */
-            padding: 20px;
+        /* Style the container */
+        .container {
+            margin-right: 220px; /* Adjust margin-right to accommodate side navbar width */
         }
 
-        /* Style the side navbar */
-        .side-navbar {
-            position: fixed;
-            right: 0; /* Align to the right side */
-            top: 50%; /* Center vertically */
-            transform: translateY(-50%); /* Adjust to center */
-            padding-top: 60px; /* Adjust according to your navbar height */
-            width: auto; /* Adjust width dynamically */
-            overflow-y: auto;
-        }
-
-        /* Style links inside the navbar */
-        .side-navbar a {
-            display: block;
-            padding: 10px 15px;
-            text-decoration: none;
-            color: black;
-            border-radius: 20px; /* Rounded corners */
-        }
-
-        /* Change color on hover */
-        .side-navbar a:hover {
-            background-color: #ddd;
+        /* Style the sections */
+        section {
+            margin-top: 40px; /* Add space between sections */
         }
       </style>
 
@@ -194,13 +179,13 @@
   <!-- Unique side navbar -->
   <nav class="side-navbar">
     <div class="tab">
-        <button class="tablinks" onclick="handleTabClick(event)">Music</button>
-        <button class="tablinks" onclick="handleTabClick(event)">TV</button>
-        <button class="tablinks" onclick="handleTabClick(event)">Movies</button>
-        <button class="tablinks" onclick="handleTabClick(event)">Games</button>
-        <button class="tablinks" onclick="handleTabClick(event)">Books</button>
+        <button class="tablinks" onclick="scrollToSection('Music')">Music</button>
+        <button class="tablinks" onclick="scrollToSection('TV')">TV</button>
+        <button class="tablinks" onclick="scrollToSection('Movies')">Movies</button>
+        <button class="tablinks" onclick="scrollToSection('Games')">Games</button>
+        <button class="tablinks" onclick="scrollToSection('Books')">Books</button>
     </div>
-</nav>
+    </nav>
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
