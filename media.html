@@ -425,13 +425,10 @@
 </footer>
 
 <script>
-    function handleTabClick(event) {
-        const tabButton = event.target;
-        tabButton.style.transform = "scale(0.95)"; // Add a scale effect
-        setTimeout(() => {
-            tabButton.style.transform = "scale(1)"; // Reset scale after a delay
-        }, 100);
-        // Add your logic for tab switching here
+    // Function to scroll to a specific section
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        section.scrollIntoView({ behavior: 'smooth' });
     }
 </script>
 
