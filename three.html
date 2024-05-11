@@ -33,7 +33,7 @@
         const greyParticles = [];
         const blackParticles = [];
         const yellowParticles = [];
-        const yellowGreyParticles = [];
+        const trailParticles = []; // For the trail effect
 
         // Create random initial velocities for particles
         const velocities = [];
@@ -54,6 +54,12 @@
             greyParticles.push(greyParticle);
             scene.add(greyParticle);
 
+            // Create a trail particle for the grey particle
+            const trailParticle = new THREE.Mesh(particleGeometry, greyMaterial);
+            trailParticle.position.copy(greyParticle.position);
+            trailParticles.push(trailParticle);
+            scene.add(trailParticle);
+
             // Black particles
             const blackParticle = new THREE.Mesh(particleGeometry, blackMaterial);
             blackParticle.position.x = Math.random() * 20 - 10;
@@ -69,14 +75,6 @@
             yellowParticle.position.z = Math.random() * 20 - 10;
             yellowParticles.push(yellowParticle);
             scene.add(yellowParticle);
-
-            // Yellow to Grey particles
-            const yellowGreyParticle = new THREE.Mesh(particleGeometry, yellowMaterial);
-            yellowGreyParticle.position.x = Math.random() * 20 - 10;
-            yellowGreyParticle.position.y = Math.random() * 20 - 10;
-            yellowGreyParticle.position.z = Math.random() * 20 - 10;
-            yellowGreyParticles.push(yellowGreyParticle);
-            scene.add(yellowGreyParticle);
         }
 
         // Set up camera
@@ -96,24 +94,9 @@
                 if (particle.position.y > 10) particle.position.y = -10;
                 if (particle.position.z < -10) particle.position.z = 10;
                 if (particle.position.z > 10) particle.position.z = -10;
-            });
 
-            // Update yellow-grey particles position and color
-            yellowGreyParticles.forEach((particle, index) => {
-                // Update particle position
-                particle.position.add(velocities[index]);
-
-                // Wrap particles around the screen
-                if (particle.position.x < -10) particle.position.x = 10;
-                if (particle.position.x > 10) particle.position.x = -10;
-                if (particle.position.y < -10) particle.position.y = 10;
-                if (particle.position.y > 10) particle.position.y = -10;
-                if (particle.position.z < -10) particle.position.z = 10;
-                if (particle.position.z > 10) particle.position.z = -10;
-
-                // Randomly switch between yellow and grey
-                const randomColor = Math.random() < 0.5 ? 0xffff00 : 0x888888;
-                particle.material.color.set(randomColor);
+                // Update trail particle position
+                trailParticles[index].position.copy(particle.position);
             });
 
             renderer.render(scene, camera);
