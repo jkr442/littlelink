@@ -36,6 +36,19 @@
     <script src="./navbar.js"></script>
 
     <style>
+        /* Define the custom font */
+        @font-face {
+        font-family: 'BerkeleyMonoVariable';
+        src: url('/fonts/berkeley-mono-variable-2.woff2') format('woff2'), /* Modern Browsers */
+            url('path/to/your/font.woff') format('woff'); /* Older Browsers */
+        /* Add additional font formats if necessary */
+        }
+
+        /* Apply the custom font to specific elements */
+        body {
+        font-family: 'BerkeleyMonoVariable', sans-serif; /* Apply the custom font as the primary font with a fallback to sans-serif */
+        }
+
         /* Container style */
         .container {
           max-width: 1200px;
