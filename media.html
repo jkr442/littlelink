@@ -95,7 +95,6 @@
 
         /* Style the tab buttons */
         .tab {
-            float: left;
             margin-right: 20px; /* Add some space between tabs */
         }
 
@@ -112,6 +111,7 @@
             margin-bottom: 5px;
             width: 200px;
             text-align: left;
+            border-radius: 20px; /* Rounded corners */
         }
 
         /* Change background color of buttons on hover */
@@ -125,16 +125,9 @@
         }
 
         /* Style the tab content */
-        .tabcontent clearfix {
+        .tabcontent {
             display: block; /* Display all content by default */
             padding: 20px;
-        }
-
-        /* Clear floats after the tab */
-        .clearfix::after {
-            content: "";
-            clear: both;
-            display: table;
         }
 
         /* Style the side navbar */
@@ -155,6 +148,7 @@
             padding: 10px 15px;
             text-decoration: none;
             color: black;
+            border-radius: 20px; /* Rounded corners */
         }
 
         /* Change color on hover */
@@ -200,21 +194,18 @@
   </nav>
 
   <!-- Unique side navbar -->
-    <nav class="side-navbar">
-        <div class="tab">
-            <button class="tablinks" onclick="location.href='#Music'">Music</button>
-            <button class="tablinks" onclick="location.href='#TV'">TV</button>
-            <button class="tablinks" onclick="location.href='#Movies'">Movies</button>
-            <button class="tablinks" onclick="location.href='#Games'">Games</button>
-            <button class="tablinks" onclick="location.href='#Books'">Books</button>
-        </div>
-    </nav>
+  <nav class="side-navbar">
+    <div class="tab">
+        <button class="tablinks" onclick="handleTabClick(event)">Music</button>
+        <button class="tablinks" onclick="handleTabClick(event)">TV</button>
+        <button class="tablinks" onclick="handleTabClick(event)">Movies</button>
+        <button class="tablinks" onclick="handleTabClick(event)">Games</button>
+        <button class="tablinks" onclick="handleTabClick(event)">Books</button>
+    </div>
+</nav>
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-
-
 
 <div class="container" style="margin-right: 220px;"> <!-- Adjust margin-right to accommodate side navbar width -->
 
@@ -434,6 +425,17 @@
         </div>
     </div>
 </footer>
+
+<script>
+    function handleTabClick(event) {
+        const tabButton = event.target;
+        tabButton.style.transform = "scale(0.95)"; // Add a scale effect
+        setTimeout(() => {
+            tabButton.style.transform = "scale(1)"; // Reset scale after a delay
+        }, 100);
+        // Add your logic for tab switching here
+    }
+</script>
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
