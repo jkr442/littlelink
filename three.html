@@ -41,13 +41,16 @@
         // Animation loop
         function animate() {
             requestAnimationFrame(animate);
+            const time = Date.now() * 0.001; // Convert milliseconds to seconds
             particles.forEach((particle, index) => {
                 // Update particle positions along elliptical path
                 const angle = (index / numParticles) * Math.PI * 2;
                 const radiusX = 10;
                 const radiusY = 5;
-                particle.position.x = Math.cos(angle) * radiusX;
-                particle.position.y = Math.sin(angle) * radiusY;
+                const xOffset = Math.cos(time + index * 0.1) * 0.5; // Add oscillation to X position
+                const yOffset = Math.sin(time + index * 0.1) * 0.5; // Add oscillation to Y position
+                particle.position.x = Math.cos(angle) * radiusX + xOffset;
+                particle.position.y = Math.sin(angle) * radiusY + yOffset;
             });
             renderer.render(scene, camera);
         }
