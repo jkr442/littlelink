@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Check if canvas element exists
     const canvas = document.getElementById('canvas');
+    if (!canvas) {
+        console.error("Canvas element not found!");
+        return;
+    }
+
     const ctx = canvas.getContext('2d');
 
     // Set canvas size
