@@ -96,6 +96,7 @@
         /* Style the tab buttons */
         .tab {
             float: left;
+            margin-right: 20px; /* Add some space between tabs */
         }
 
         /* Style the buttons inside the tab */
@@ -126,13 +127,18 @@
         /* Style the tab content */
         .tabcontent {
             display: none;
-            padding: 20px;
-            border-left: 1px solid #ccc;
         }
 
         /* Make the tab content visible */
         .tabcontent:target {
             display: block;
+        }
+
+        /* Clear floats after the tab */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
         }
       </style>
 
