@@ -37,47 +37,48 @@
 
     <style>
         /* Container style */
-        .image-container {
-        display: flex; /* Use flexbox to arrange images horizontally */
-        flex-wrap: wrap; /* Allow images to wrap to the next row if needed */
-        justify-content: space-between; /* Space out images evenly */
-        max-width: 1000px; /* Set maximum width of the container */
-        margin: 0 auto; /* Center the container horizontally */
-        padding: 20px; /* Add some padding around the container */
-        }
-
-        /* Adjust the width of the images to fit three in a row */
-        .image-container img {
-        width: 100%; /* Set image width to 100% of its container */
-        height: auto; /* Maintain aspect ratio */
-        }
-
-        /* Container style */
         .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 20px;
         }
-
+    
         /* Row style */
         .row {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 -10px; /* Adjust margin to compensate for column padding */
+          display: flex;
+          flex-wrap: wrap;
+          margin: 0 -10px; /* Adjust margin to compensate for column padding */
         }
-
+    
         /* Column style */
         .column {
-        flex: 1;
-        padding: 0 10px; /* Add padding to create space between columns */
+          flex: 1;
+          padding: 0 10px; /* Add padding to create space between columns */
         }
-
+    
+        /* Image size and centering */
+        .image-container {
+          text-align: center; /* Center-align text and inline elements */
+        }
+    
+        .image-container img {
+          display: block; /* Ensure images are treated as block elements */
+          width: 100%; /* Set image width to 100% of its container */
+          height: auto; /* Maintain aspect ratio */
+          margin: 0 auto; /* Center the image horizontally */
+        }
+    
+        /* Text centering */
+        h3, h4, p {
+          text-align: center; /* Center-align headings and paragraphs */
+        }
+    
         /* Adjustments for mobile devices */
         @media (max-width: 768px) {
-        .column {
+          .column {
             flex: 1 0 100%; /* Each column takes full width on smaller screens */
             padding: 0;
-        }
+          }
         }
       </style>
 
