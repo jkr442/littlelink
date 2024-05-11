@@ -21,6 +21,7 @@ class Particle {
     }
 
     draw() {
+        console.log("Drawing particle at", this.x, this.y);
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius * this.growthFactor, 0, Math.PI * 2);
         const hue = 30 + (this.radius - 2) * 20; // Adjust hue based on particle size within the desired range
@@ -29,6 +30,7 @@ class Particle {
     }
 
     update(particles, hazeParticles) {
+        console.log("Updating particle at", this.x, this.y);
         // Move particles
         this.x += this.vx;
         this.y += this.vy;
