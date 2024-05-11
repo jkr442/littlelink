@@ -40,19 +40,7 @@
   max-height:99%;
   vertical-align: middle;
 }
-.mediacontainer {
-  text-align: center;
-}
-.mediarow {
-  display: flex; /* Use flexbox to create a flexible layout */
-  flex-wrap: wrap; /* Allow the columns to wrap to the next line if needed */
-  margin: 0 -10px; /* Add negative margin to counteract the padding applied to each column */
-}
-.mediacolumn {
-  flex: 0 0 calc(33.33% - 20px); /* Set each column to one-third of the container width with 10px padding on each side */
-  box-sizing: border-box; /* Include padding and border in the column's total width */
-  padding: 0 10px; /* Add some horizontal padding to the columns */
-}
+
 /* For devices larger than 400px */
 @media (min-width: 400px) {
   .container {
