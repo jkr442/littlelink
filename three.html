@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Particle Swarm Animation</title>
+    <title>Smooth Elliptical Particle Swarm Animation</title>
     <style>
         body {
             margin: 0;
@@ -31,32 +31,28 @@
 
         for (let i = 0; i < numParticles; i++) {
             const particle = new THREE.Mesh(particleGeometry, particleMaterial);
-            particle.position.x = Math.random() * 20 - 10;
-            particle.position.y = Math.random() * 20 - 10;
-            particle.position.z = Math.random() * 20 - 10;
+            const angle = Math.random() * Math.PI * 2;
+            const radiusX = 10;
+            const radiusY = 5;
+            particle.position.x = Math.cos(angle) * radiusX;
+            particle.position.y = Math.sin(angle) * radiusY;
             particles.push(particle);
             scene.add(particle);
         }
 
         // Set up camera
-        camera.position.z = 5;
+        camera.position.z = 20;
 
         // Animation loop
         function animate() {
             requestAnimationFrame(animate);
             particles.forEach(particle => {
-                // Update particle positions
-                particle.position.x += Math.random() * 0.1 - 0.05;
-                particle.position.y += Math.random() * 0.1 - 0.05;
-                particle.position.z += Math.random() * 0.1 - 0.05;
-
-                // Wrap particles around the screen
-                if (particle.position.x < -10) particle.position.x = 10;
-                if (particle.position.x > 10) particle.position.x = -10;
-                if (particle.position.y < -10) particle.position.y = 10;
-                if (particle.position.y > 10) particle.position.y = -10;
-                if (particle.position.z < -10) particle.position.z = 10;
-                if (particle.position.z > 10) particle.position.z = -10;
+                // Update particle positions along elliptical path
+                const angle = Math.atan2(particle.position.y, particle.position.x) + 0.01;
+                const radiusX = 10;
+                const radiusY = 5;
+                particle.position.x = Math.cos(angle) * radiusX;
+                particle.position.y = Math.sin(angle) * radiusY;
             });
             renderer.render(scene, camera);
         }
