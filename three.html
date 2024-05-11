@@ -91,7 +91,9 @@
 
             // Update yellow-grey particles color
             yellowGreyParticles.forEach(particle => {
-                particle.material.color.lerp(new THREE.Color(0x888888), 0.01); // Lerp towards grey
+                // Randomly switch between yellow and grey
+                const randomColor = Math.random() < 0.5 ? 0xffff00 : 0x888888;
+                particle.material.color.set(randomColor);
             });
 
             renderer.render(scene, camera);
