@@ -95,21 +95,22 @@
 
         /* Style the tab buttons */
         .tab {
-            overflow: hidden;
-            border: 1px solid #ccc;
-            background-color: #f1f1f1;
+            float: left;
         }
 
         /* Style the buttons inside the tab */
         .tab button {
-            background-color: inherit;
-            float: left;
+            display: block;
+            background-color: #f1f1f1;
             border: none;
             outline: none;
             cursor: pointer;
-            padding: 14px 16px;
+            padding: 10px 15px;
             transition: 0.3s;
-            font-size: 17px;
+            font-size: 16px;
+            margin-bottom: 5px;
+            width: 200px;
+            text-align: left;
         }
 
         /* Change background color of buttons on hover */
@@ -125,9 +126,13 @@
         /* Style the tab content */
         .tabcontent {
             display: none;
-            padding: 6px 12px;
-            border: 1px solid #ccc;
-            border-top: none;
+            padding: 20px;
+            border-left: 1px solid #ccc;
+        }
+
+        /* Make the tab content visible */
+        .tabcontent:target {
+            display: block;
         }
       </style>
 
@@ -376,22 +381,6 @@
         </div>
     </div>
 </div>
-
-<script>
-    function openTab(evt, tabName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(tabName).style.display = "block";
-        evt.currentTarget.className += " active";
-    }
-</script>
 
 </body>
 
