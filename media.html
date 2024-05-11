@@ -45,11 +45,40 @@
         margin: 0 auto; /* Center the container horizontally */
         padding: 20px; /* Add some padding around the container */
         }
+
         /* Adjust the width of the images to fit three in a row */
         .image-container img {
         width: calc(33.33% - 20px); /* Calculate width for three images with some spacing between */
         margin-bottom: 20px; /* Add some spacing between images vertically */
         object-fit: cover; /* Ensure images maintain their aspect ratio and cover the container */
+        }
+
+        /* Container style */
+        .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        }
+
+        /* Row style */
+        .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px; /* Adjust margin to compensate for column padding */
+        }
+
+        /* Column style */
+        .column {
+        flex: 1;
+        padding: 0 10px; /* Add padding to create space between columns */
+        }
+
+        /* Adjustments for mobile devices */
+        @media (max-width: 768px) {
+        .column {
+            flex: 1 0 100%; /* Each column takes full width on smaller screens */
+            padding: 0;
+        }
         }
       </style>
 
@@ -91,7 +120,7 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<div class="container"
+<div class="container">
     <!-- Title -->
     <h1>Media</h1>
     <p>Music, TV and Movies I'm Loving - May, 2024 </p>
