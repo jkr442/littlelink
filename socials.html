@@ -33,22 +33,21 @@
   <link rel="icon" type="image/png" href="images/avatar1.jpg">
   
   <style>
-    canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1; /* Ensure the canvas is behind other content */
+  canvas {
+    position: relative; /* Change from fixed to relative */
+    z-index: -1;
     width: 100%;
     height: 100%;
     filter: blur(10px);
-    }
-    .container {
+  }
+  .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Ensure the container takes up the full height of the viewport */
-    flex-direction: column; /* Center content vertically */
-    }
+    min-height: 100vh;
+    flex-direction: column;
+    margin-top: 10%; /* Add margin-top to push content down */
+  }
   </style>
 
 </head>
