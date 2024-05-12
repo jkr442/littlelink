@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Page Information
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Media</title>
+  <meta name="description" content="Media">
+  <meta name="author" content="Jourdan Keillor">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <link rel="stylesheet" href="css/skeleton-dark.css">
+
+    <!-- Navbar -->
+    <link rel="stylesheet" href="css/navbar.css">
+    <script src="./navbar.js"></script>
+
+    <style>
+        /* Define the custom font */
+        @font-face {
+        font-family: 'BerkeleyMonoVariable';
+        src: url('fonts/berkeley-mono-variable-2.woff2') format('woff2')
+        /* Add additional font formats if necessary */
+        }
+
+        /* Apply the custom font to specific elements */
+        body {
+        font-family: 'BerkeleyMonoVariable', monospace; /* Apply the custom font as the primary font with a fallback to sans-serif */
+        }
+
+        /* Container style
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 20px;
+        } */
+    
+        /* Row style */
+        .row {
+          display: flex;
+          flex-wrap: wrap;
+          margin: 0 -10px; /* Adjust margin to compensate for column padding */
+        }
+    
+        /* Column style
+        .column {
+          flex: 1;
+          padding: 0 10px; /* Add padding to create space between columns */
+        } */
+    
+        /* Image size and centering */
+        .image-container {
+          text-align: center; /* Center-align text and inline elements */
+        }
+    
+        .image-container img {
+          display: block; /* Ensure images are treated as block elements */
+          width: 100%; /* Set image width to 100% of its container */
+          height: auto; /* Maintain aspect ratio */
+          margin: 0 auto; /* Center the image horizontally */
+        }
+    
+        /* Text centering */
+        h1, h2, h3, h4, p {
+          text-align: center; /* Center-align headings and paragraphs */
+        }
+    
+        /* Adjustments for mobile devices */
+        @media (max-width: 768px) {
+          .column {
+            flex: 1 0 100%; /* Each column takes full width on smaller screens */
+            padding: 0;
+          }
+        }
+
+        /* Style the side navbar */
+        .side-navbar {
+            position: fixed;
+            right: 0; /* Align to the right side */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Adjust to center */
+            padding-top: 60px; /* Adjust according to your navbar height */
+            width: auto; /* Adjust width dynamically */
+            overflow-y: auto;
+        }
+
+        /* Style the tab buttons */
+        .tab button {
+            display: block;
+            background-color: transparent; /* Removed background color */
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            transition: 0.3s;
+            font-size: 16px;
+            margin-bottom: 5px;
+            text-align: left;
+            border-radius: 20px; /* Rounded corners */
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        /* Style the active/current tablink */
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        /* Style the container
+        .container {
+            margin-right: 220px; /* Adjust margin-right to accommodate side navbar width */
+        } */
+
+        /* Style the sections */
+        section {
+            margin-top: 40px; /* Add space between sections */
+        }
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Ensure the canvas is behind other content */
+            width: 100%;
+            height: 100%;
+            filter: blur(10px);
+        }
+      </style>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/avatar1.jpg">
+
+  <script src="four.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Navbar
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <nav class="navbar">
+  
+    <!-- This will display a link to the index page on the upper-left corner -->
+    <div class="brand-title">
+        <a href="index.html">jozk.me</a>
+    </div>
+
+    <!-- This is for hamberger menu -->
+    <label for="check">
+      <input type="checkbox" id="check" class="toggle-button"/> 
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- This is the link for the different pages -->
+    <div class="navbar-links">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li> 
+            <li><a href="socials.html">Socials</a></li>
+            <li><a href="media.html">Media</a></li>
+            <li><a href="projects.html">Projects</a></li>
+        </ul>
+    </div>
+  </nav>
+
+  <!-- Unique side navbar -->
+  <nav class="side-navbar">
+    <div class="tab">
+        <button class="tablinks" data-section="Music" onclick="scrollToSection('Music')">Music</button>
+        <button class="tablinks" data-section="TV" onclick="scrollToSection('TV')">TV</button>
+        <button class="tablinks" data-section="Movies" onclick="scrollToSection('Movies')">Movies</button>
+        <button class="tablinks" data-section="Games" onclick="scrollToSection('Games')">Games</button>
+        <button class="tablinks" data-section="Books" onclick="scrollToSection('Books')">Books</button>
+    </div>
+    </nav>
+
+<!-- Lavparticle-->
+<canvas id="canvas"></canvas>
+    
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<div class="container" style="margin-right: 220px;"> <!-- Adjust margin-right to accommodate side navbar width -->
+
+    <!-- Title -->
+    <h1>Media</h1>
+    <p>Content I'm Loving - May, 2024 </p>
+
+    <!-- Music Section -->
+    <section id="Music">
+        <h2>Music</h2>
+        <!-- Your music content here -->
+        <div class="row">
+            <div class="column">
+                <div class="image-container">
+                    <a href="https://hypn0ticbrass.bandcamp.com/album/this-is-a-mindfulness-drill-a-reimagining-of-richard-youngs-sapphie">
+                        <img src="images/media/music/tiamd.webp" alt="This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie' (2021)">
+                    </a>
+                </div>
+                <a href="https://hypn0ticbrass.bandcamp.com/album/this-is-a-mindfulness-drill-a-reimagining-of-richard-youngs-sapphie">
+                    <h4>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie' (2021) - Hypnotic Brass Ensemble</h4>
+                </a>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+            </div>
+            <div class="column">
+                <div class="image-container">
+                    <a href="https://futureislands.bandcamp.com/album/people-who-aren-t-there-anymore">
+                        <img src="images/media/music/pwata.webp" alt="People Who Aren’t There Anymore (2024)">
+                    </a>
+                </div>
+                <a href="https://futureislands.bandcamp.com/album/people-who-aren-t-there-anymore">
+                    <h4>People Who Aren’t There Anymore (2024) - Future Islands</h4>
+                </a>
+                <p>this album has copped a bit of flak online, but it's a solid Future Islands record to me</p>
+            </div>
+            <div class="column">
+                <div class="image-container">
+                    <a href="https://kamasiwashington.bandcamp.com/album/fearless-movement">
+                        <img src="images/media/music/fmove.webp" alt="Fearless Movement (2024)">
+                    </a>
+                </div>
+                <a href="https://kamasiwashington.bandcamp.com/album/fearless-movement">
+                    <h4>Fearless Movement (2024) - Kamasi Washington</h4>
+                </a>
+                <p>huge record with so many different movements, arrangements, and feelings</p>
+            </div>
+        </div>    
+        <h2>Also in Rotation</h2>
+        <div class="row">
+            <div class="column">
+                <div class="image-container">
+                    <a href="https://en.wikipedia.org/wiki/Filthy_Underneath">
+                        <img src="images/media/music/funde.webp" alt="Filthy Underneath (2024)">
+                    </a>
+                </div>
+                    <a href="https://en.wikipedia.org/wiki/Filthy_Underneath">
+                        <h4>Filthy Underneath (2024) - Nadine Shah</h4>
+                    </a>
+            </div>
+            <div class="column">
+                <div class="image-container">
+                    <a href="https://sprintsmusic.bandcamp.com/album/letter-to-self">
+                        <img src="images/media/music/ltsel.jpg" alt="Letter to Self (2024)">
+                    </a>
+                </div>
+                <a href="https://sprintsmusic.bandcamp.com/album/letter-to-self">
+                    <h4>Letter To Self (2024) - Sprints</h4>
+                </a>
+            </div>
+            <div class="column">
+                <div class="image-container">
+                    <a href="https://etjusticepourtous.bandcamp.com/album/hyperdrama">
+                        <img src="images/media/music/hyper.webp" alt="Hyperdrama (2024)">
+                    </a>
+                </div>
+                    <a href="https://etjusticepourtous.bandcamp.com/album/hyperdrama">
+                        <h4>Hyperdrama (2024) - Justice</h4>
+                    </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TV Section -->
+    <section id="TV">
+        <h2>TV</h2>
+        <!-- Your TV content here -->
+        <div class="row">
+            <div class="column">
+                <div class="image-container">
+                    <a href="https://www.dropout.tv/game-changer">
+                        <img src="images/media/tv/gchan.jpg" alt="Game Changer (Ongoing)">
+                    </a>
+                </div>
+                <a href="https://www.dropout.tv/game-changer">
+                <h3>Game Changer (Ongoing)</h3>
+                </a>
+                <p>"the only game show where the game changes every show" - I could watch this show forever</p>
+            </div>
+            <div class="column">
+                <div class="image-container">
+                    <a href="https://en.wikipedia.org/wiki/3_Body_Problem_(TV_series)">
+                        <img src="images/media/tv/3bpro.jpg" alt="3 Body Problem (2024)">
+                    </a>
+                </div>
+                <a href="https://en.wikipedia.org/wiki/3_Body_Problem_(TV_series)">
+                <h3>3 Body Problem (2024)</h3>
+                </a>
+                <p>it's wonky as hell but it's got a lot to love</p>
+            </div>
+            <div class="column">
+                <div class="image-container">
+                    <a href="https://www.dropout.tv/total-forgiveness">
+                        <img src="images/media/tv/tforg.jpg" alt="Total Forgiveness (2019)">
+                    </a>
+                </div>
+                <a href="https://www.dropout.tv/total-forgiveness">
+                <h3>Total Forgiveness (2019)</h3>
+                </a>
+                <p>ally and grant's tv experiment was no easier a watch the second time round, but it's as engaging as ever</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Movies Section -->
+    <section id="Movies">
+        <h2>Movies</h2>
+        <!-- Your movies content here -->
+        <div class="row">
+            <div class="column">
+                <div class="image-container">
+                    <a href="https://en.wikipedia.org/wiki/Enys_Men">
+                        <img src="images/media/movies/emen.jpg" alt="Enys Men (2023)">
+                    </a>
+                </div>
+                <a href="https://en.wikipedia.org/wiki/Enys_Men">
+                <h3>Enys Men (2023)</h3>
+                </a>
+                <p>as in <i>Annihilation</i>, a scientist enters a mysterious coastal space and finds herself detached from the rules of reality. light on plot, heavy on vibes</p>
+            </div>
+            <div class="column">
+                <div class="image-container">
+                    <a href="https://en.wikipedia.org/wiki/Civil_War_(film)">
+                        <img src="images/media/movies/cwar.jpg" alt="Civil War (2024)">
+                    </a>
+                </div>
+                <a href="https://en.wikipedia.org/wiki/Civil_War_(film)">
+                <h3>Civil War (2024)</h3>
+                </a>
+                <p>i'm still an Alex Garland fan and this didn't disappoint</p>
+            </div>
+            <div class="column">
+                <div class="image-container">
+                    <a href="https://watch.joelycett.com/">
+                        <img src="images/media/movies/mmmhd.jpg" alt="More, More, More! How Do You Lycett? How Do You Lycett? (2022)">
+                    </a>
+                </div>
+                <a href="https://watch.joelycett.com/">
+                <h3>More, More, More! How Do You Lycett? How Do You Lycett? (2022)</h3>
+                </a>
+                <p>i'm a sucker for a comedy special with an overarching story and every step of the way this one pays off - it legitimately brought a tear to my eye</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="Games">
+        <h2>Games</h2>
+        <!-- Your games content here -->
+        <div class="row">
+            <div class="column">
+                <div class="image-container">
+                    <a href="https://store.steampowered.com/app/1373960/INDIKA/">
+                        <img src="images/media/games/indik.jpg" alt="INDIKA (2024)">
+                    </a>
+                </div>
+                <a href="https://store.steampowered.com/app/1373960/INDIKA/">
+                <h3>INDIKA (2024)</h3>
+                </a>
+                <p>have only just started and i've never felt more like a quare peg forced through a round hole - and i never know what the game is gonna do next</p>
+            </div>
+            <div class="column">
+                <div class="image-container">
+                    <a href="https://store.steampowered.com/app/493520/GTFO/">
+                        <img src="images/media/games/gtfo.webp" alt="GTFO (2021)">
+                    </a>
+                </div>
+                <a href="https://store.steampowered.com/app/493520/GTFO/">
+                <h3>GTFO (2021)</h3>
+                </a>
+                <p>dropped to the bottom of an monster-infested facility armed very few resources and visibility, and it's up to you to escape. this game is unrelenting</p>
+            </div>
+            <!--
+            <div class="column">
+                <div class="image-container">
+                    <a href="https://www.dropout.tv/game-changer">
+                        <img src="images/media/tv/gchan.jpg" alt="Game Changer">
+                    </a>
+                </div>
+                <a href="https://www.dropout.tv/game-changer">
+                <h3>Game Changer</h3>
+                </a>
+                <p>"the only game show where the game changes every show" - I could watch this show forever</p>
+            </div>
+            -->
+        </div>
+    </section>
+
+    <!-- Books Section -->
+    <section id="Books">
+        <h2>Books</h2>
+        <!-- Your books content here -->
+        <p>books to come</p>
+        <!--
+        <div class="row">
+            <div class="column">
+                <div class="image-container">
+                    <img src="movie_image_1.jpg" alt="Movie Image 1">
+                </div>
+                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+            </div>
+            <div class="column">
+                <div class="image-container">
+                    <img src="movie_image_2.jpg" alt="Movie Image 2">
+                </div>
+                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+            </div>
+            <div class="column">
+                <div class="image-container">
+                    <img src="movie_image_3.jpg" alt="Movie Image 3">
+                </div>
+                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
+                <h4>Hypnotic Brass Ensemble</h4>
+                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+            </div>
+        -->
+        </div>
+    </section>
+</div>
+
+<!-- Footer
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<footer
+    style="bottom: 0; width: 100%; height: 50px; color: #D8DEE9; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+    <div class="row">
+        <div class="column">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p style="font-size: 75%;">© 2023 Jourdan Keillor · <a href="privacy.html">Privacy</a>
+                <br>Powered by <a href="https://vercel.com/">Vercel</a> and forked from <a
+                    href="https://littlelink.io/">LittleLink</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Function to scroll to a specific section
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Function to highlight the tab when its associated section comes into view
+    document.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('section');
+        const scrollPosition = window.scrollY;
+
+        sections.forEach(function(section) {
+            if (scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
+                const sectionId = section.getAttribute('id');
+                const tab = document.querySelector('.tab button[data-section="' + sectionId + '"]');
+                if (tab) {
+                    document.querySelectorAll('.tab button').forEach(function(btn) {
+                        btn.classList.remove('active');
+                    });
+                    tab.classList.add('active');
+                }
+            }
+        });
+    });
+</script>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+
+</html>
