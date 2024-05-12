@@ -32,7 +32,7 @@ for (let i = 0; i < numParticles; i++) {
     const particle = new THREE.Mesh(particleGeometry, particleMaterial);
     particle.position.x = Math.random() * 20 - 10;
     particle.position.y = Math.random() * 20 - 10;
-    particle.position.z = Math.random() * 20 - 10;
+    particle.position.z = Math.random() * 5 - 15; // Adjusted initial z position
     particles.push(particle);
     scene.add(particle);
 }
@@ -42,7 +42,7 @@ for (let i = 0; i < numParticles; i++) {
     const particle = new THREE.Mesh(particleGeometry, greyParticleMaterial);
     particle.position.x = Math.random() * 30 - 15;
     particle.position.y = Math.random() * 30 - 15;
-    particle.position.z = Math.random() * 30 - 15;
+    particle.position.z = Math.random() * 5 - 20; // Adjusted initial z position
     greyParticles.push(particle);
     scene.add(particle);
 }
@@ -52,7 +52,7 @@ for (let i = 0; i < numParticles; i++) {
     const particle = new THREE.Mesh(particleGeometry, orangeParticleMaterial);
     particle.position.x = Math.random() * 40 - 20;
     particle.position.y = Math.random() * 40 - 20;
-    particle.position.z = Math.random() * 40 - 20;
+    particle.position.z = Math.random() * 5 - 25; // Adjusted initial z position
     orangeParticles.push(particle);
     scene.add(particle);
 }
