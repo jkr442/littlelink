@@ -12,7 +12,7 @@ const greyParticleMaterial = new THREE.MeshBasicMaterial({ color: 0x888888 });
 const orangeParticleMaterial = new THREE.MeshBasicMaterial({ color: 0xffa500 });
 
 // Create particle systems
-const numParticles = 10000;
+const numParticles = 666;
 const particles = [];
 const greyParticles = [];
 const orangeParticles = [];
