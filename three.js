@@ -12,7 +12,7 @@ const greyParticleMaterial = new THREE.MeshBasicMaterial({ color: 0x888888 });
 const orangeParticleMaterial = new THREE.MeshBasicMaterial({ color: 0xffa500 });
 
 // Create particle systems
-const numParticles = 5000;
+const numParticles = 10000;
 const particles = [];
 const greyParticles = [];
 const orangeParticles = [];
@@ -30,8 +30,8 @@ for (let i = 0; i < numParticles; i++) {
 // Create particles for layer 1 (yellow)
 for (let i = 0; i < numParticles; i++) {
     const particle = new THREE.Mesh(particleGeometry, particleMaterial);
-    particle.position.x = Math.random() * 20 - 10;
-    particle.position.y = Math.random() * 20 - 10;
+    particle.position.x = Math.random() * 12 - 6;  // Adjusted for 6:13 aspect ratio
+    particle.position.y = Math.random() * 26 - 13; // Adjusted for 6:13 aspect ratio
     particle.position.z = Math.random() * 5 - 15; // Adjusted initial z position
     particles.push(particle);
     scene.add(particle);
@@ -40,8 +40,8 @@ for (let i = 0; i < numParticles; i++) {
 // Create particles for layer 2 (grey)
 for (let i = 0; i < numParticles; i++) {
     const particle = new THREE.Mesh(particleGeometry, greyParticleMaterial);
-    particle.position.x = Math.random() * 30 - 15;
-    particle.position.y = Math.random() * 30 - 15;
+    particle.position.x = Math.random() * 18 - 9;  // Adjusted for 6:13 aspect ratio
+    particle.position.y = Math.random() * 39 - 19.5; // Adjusted for 6:13 aspect ratio
     particle.position.z = Math.random() * 5 - 20; // Adjusted initial z position
     greyParticles.push(particle);
     scene.add(particle);
@@ -50,8 +50,8 @@ for (let i = 0; i < numParticles; i++) {
 // Create particles for layer 3 (orange)
 for (let i = 0; i < numParticles; i++) {
     const particle = new THREE.Mesh(particleGeometry, orangeParticleMaterial);
-    particle.position.x = Math.random() * 40 - 20;
-    particle.position.y = Math.random() * 40 - 20;
+    particle.position.x = Math.random() * 24 - 12;  // Adjusted for 6:13 aspect ratio
+    particle.position.y = Math.random() * 52 - 26; // Adjusted for 6:13 aspect ratio
     particle.position.z = Math.random() * 5 - 25; // Adjusted initial z position
     orangeParticles.push(particle);
     scene.add(particle);
