@@ -12,7 +12,7 @@ const greyParticleMaterial = new THREE.MeshBasicMaterial({ color: 0x888888 });
 const orangeParticleMaterial = new THREE.MeshBasicMaterial({ color: 0xffa500 });
 
 // Create particle systems
-const numParticles = 666;
+const numParticles = 333;
 const particles = [];
 const greyParticles = [];
 const orangeParticles = [];
@@ -27,11 +27,25 @@ for (let i = 0; i < numParticles; i++) {
     ));
 }
 
+// Function to generate a random position with a Gaussian distribution
+function randomGaussian(min, max, sigma) {
+    const u = 0, v = 0;
+    let x, y, z;
+    do {
+        x = Math.random() * (max - min) + min;
+        y = Math.random() * (max - min) + min;
+        z = Math.exp(-0.5 * (Math.pow((x - u) / sigma, 2.0) + Math.pow((y - v) / sigma, 2.0))) /
+            (2.0 * Math.PI * sigma * sigma);
+    } while (z < Math.random()); // Rejection sampling
+    return { x: x, y: y };
+}
+
 // Create particles for layer 1 (yellow)
 for (let i = 0; i < numParticles; i++) {
+    const position = randomGaussian(-6, 6, 2); // Adjusted for 6:13 aspect ratio
     const particle = new THREE.Mesh(particleGeometry, particleMaterial);
-    particle.position.x = Math.random() * 12 - 6;  // Adjusted for 6:13 aspect ratio
-    particle.position.y = Math.random() * 26 - 13; // Adjusted for 6:13 aspect ratio
+    particle.position.x = position.x;
+    particle.position.y = position.y;
     particle.position.z = Math.random() * 5 - 15; // Adjusted initial z position
     particles.push(particle);
     scene.add(particle);
@@ -39,9 +53,10 @@ for (let i = 0; i < numParticles; i++) {
 
 // Create particles for layer 2 (grey)
 for (let i = 0; i < numParticles; i++) {
+    const position = randomGaussian(-9, 9, 3); // Adjusted for 6:13 aspect ratio
     const particle = new THREE.Mesh(particleGeometry, greyParticleMaterial);
-    particle.position.x = Math.random() * 18 - 9;  // Adjusted for 6:13 aspect ratio
-    particle.position.y = Math.random() * 39 - 19.5; // Adjusted for 6:13 aspect ratio
+    particle.position.x = position.x;
+    particle.position.y = position.y;
     particle.position.z = Math.random() * 5 - 20; // Adjusted initial z position
     greyParticles.push(particle);
     scene.add(particle);
@@ -49,9 +64,10 @@ for (let i = 0; i < numParticles; i++) {
 
 // Create particles for layer 3 (orange)
 for (let i = 0; i < numParticles; i++) {
+    const position = randomGaussian(-12, 12, 4); // Adjusted for 6:13 aspect ratio
     const particle = new THREE.Mesh(particleGeometry, orangeParticleMaterial);
-    particle.position.x = Math.random() * 24 - 12;  // Adjusted for 6:13 aspect ratio
-    particle.position.y = Math.random() * 52 - 26; // Adjusted for 6:13 aspect ratio
+    particle.position.x = position.x;
+    particle.position.y = position.y;
     particle.position.z = Math.random() * 5 - 25; // Adjusted initial z position
     orangeParticles.push(particle);
     scene.add(particle);
@@ -63,6 +79,10 @@ camera.position.z = 50;
 // Animation loop
 function animate() {
     requestAnimationFrame(animate);
+
+    // Rotate the entire scene around the Y-axis
+    scene.rotation.y += 0.001; // Adjust the speed of rotation as needed
+
     particles.forEach((particle, index) => {
         // Update particle positions with assigned velocities
         particle.position.add(velocities[index]);
