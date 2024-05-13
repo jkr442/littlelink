@@ -5,14 +5,19 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-// Create particle geometry and material
-const particleGeometry = new THREE.SphereGeometry(0.1, 32, 32);
+// Set the desired size for the particles
+const particleSize = 0.3; // Adjust this value to change particle size
+
+// Create particle geometry with increased size
+const particleGeometry = new THREE.SphereGeometry(particleSize, 32, 32);
+
+// Create particle materials
 const particleMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
 const greyParticleMaterial = new THREE.MeshBasicMaterial({ color: 0x888888 });
 const orangeParticleMaterial = new THREE.MeshBasicMaterial({ color: 0xffa500 });
 
 // Create particle systems
-const numParticles = 10000;
+const numParticles = 666;
 const particles = [];
 const greyParticles = [];
 const orangeParticles = [];
@@ -21,9 +26,9 @@ const orangeParticles = [];
 const velocities = [];
 for (let i = 0; i < numParticles; i++) {
     velocities.push(new THREE.Vector3(
-        Math.random() * 0.02 - 0.01, // x
-        Math.random() * 0.02 - 0.01, // y
-        Math.random() * 0.02 - 0.01  // z
+        Math.random() * 0.005 - 0.0025, // x (slower)
+        Math.random() * 0.005 - 0.0025, // y (slower)
+        Math.random() * 0.005 - 0.0025  // z (slower)
     ));
 }
 
@@ -40,9 +45,9 @@ for (let i = 0; i < numParticles; i++) {
 // Create particles for layer 2 (grey)
 for (let i = 0; i < numParticles; i++) {
     const particle = new THREE.Mesh(particleGeometry, greyParticleMaterial);
-    particle.position.x = Math.random() * 30 - 15;
-    particle.position.y = Math.random() * 30 - 15;
-    particle.position.z = Math.random() * 30 - 15;
+    particle.position.x = Math.random() * 20 - 10;
+    particle.position.y = Math.random() * 20 - 10;
+    particle.position.z = Math.random() * 20 - 10;
     greyParticles.push(particle);
     scene.add(particle);
 }
@@ -50,9 +55,9 @@ for (let i = 0; i < numParticles; i++) {
 // Create particles for layer 3 (orange)
 for (let i = 0; i < numParticles; i++) {
     const particle = new THREE.Mesh(particleGeometry, orangeParticleMaterial);
-    particle.position.x = Math.random() * 40 - 20;
-    particle.position.y = Math.random() * 40 - 20;
-    particle.position.z = Math.random() * 40 - 20;
+    particle.position.x = Math.random() * 20 - 10;
+    particle.position.y = Math.random() * 20 - 10;
+    particle.position.z = Math.random() * 20 - 10;
     orangeParticles.push(particle);
     scene.add(particle);
 }
