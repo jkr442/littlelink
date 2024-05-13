@@ -14,15 +14,16 @@ const particleGeometry = new THREE.SphereGeometry(particleSize, 32, 32);
 // Create particle materials
 const particleMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
 const greyParticleMaterial = new THREE.MeshBasicMaterial({ color: 0x888888 });
-const darkGreyParticleMaterial = new THREE.MeshBasicMaterial({ color: 0x333333 }); // New material for dark grey particles
+const darkGreyParticleMaterial = new THREE.MeshBasicMaterial({ color: 0x333333 });
 const orangeParticleMaterial = new THREE.MeshBasicMaterial({ color: 0xffa500 });
+const redParticleMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 }); // New material for red particles
 
 // Create particle systems
 const numParticles = 666;
 const particles = [];
-const greyParticles = [];
 const orangeParticles = [];
-const darkGreyParticles = []; // Array for dark grey particles
+const darkGreyParticles = [];
+const redParticles = []; // Array for red particles
 
 // Create random initial velocities for particles
 const velocities = [];
@@ -44,17 +45,7 @@ for (let i = 0; i < numParticles; i++) {
     scene.add(particle);
 }
 
-// Create particles for layer 2 (grey)
-for (let i = 0; i < numParticles; i++) {
-    const particle = new THREE.Mesh(particleGeometry, greyParticleMaterial);
-    particle.position.x = Math.random() * 20 - 10;
-    particle.position.y = Math.random() * 20 - 10;
-    particle.position.z = Math.random() * 20 - 10;
-    greyParticles.push(particle);
-    scene.add(particle);
-}
-
-// Create particles for layer 3 (orange)
+// Create particles for layer 2 (orange)
 for (let i = 0; i < numParticles; i++) {
     const particle = new THREE.Mesh(particleGeometry, orangeParticleMaterial);
     particle.position.x = Math.random() * 20 - 10;
@@ -64,13 +55,23 @@ for (let i = 0; i < numParticles; i++) {
     scene.add(particle);
 }
 
-// Create dark grey particles
+// Create particles for layer 3 (dark grey)
 for (let i = 0; i < numParticles; i++) {
     const particle = new THREE.Mesh(particleGeometry, darkGreyParticleMaterial);
     particle.position.x = Math.random() * 20 - 10;
     particle.position.y = Math.random() * 20 - 10;
     particle.position.z = Math.random() * 20 - 10;
     darkGreyParticles.push(particle);
+    scene.add(particle);
+}
+
+// Create particles for layer 4 (red)
+for (let i = 0; i < numParticles; i++) {
+    const particle = new THREE.Mesh(particleGeometry, redParticleMaterial);
+    particle.position.x = Math.random() * 20 - 10;
+    particle.position.y = Math.random() * 20 - 10;
+    particle.position.z = Math.random() * 20 - 10;
+    redParticles.push(particle);
     scene.add(particle);
 }
 
@@ -95,18 +96,6 @@ function animate() {
         if (particle.position.z < -10) particle.position.z = 10;
         if (particle.position.z > 10) particle.position.z = -10;
     });
-    greyParticles.forEach((particle, index) => {
-        // Update particle positions with assigned velocities
-        particle.position.add(velocities[index]);
-
-        // Wrap particles around the screen
-        if (particle.position.x < -15) particle.position.x = 15;
-        if (particle.position.x > 15) particle.position.x = -15;
-        if (particle.position.y < -15) particle.position.y = 15;
-        if (particle.position.y > 15) particle.position.y = -15;
-        if (particle.position.z < -15) particle.position.z = 15;
-        if (particle.position.z > 15) particle.position.z = -15;
-    });
     orangeParticles.forEach((particle, index) => {
         // Update particle positions with assigned velocities
         particle.position.add(velocities[index]);
@@ -120,6 +109,18 @@ function animate() {
         if (particle.position.z > 20) particle.position.z = -20;
     });
     darkGreyParticles.forEach((particle, index) => {
+        // Update particle positions with assigned velocities
+        particle.position.add(velocities[index]);
+
+        // Wrap particles around the screen
+        if (particle.position.x < -20) particle.position.x = 20;
+        if (particle.position.x > 20) particle.position.x = -20;
+        if (particle.position.y < -20) particle.position.y = 20;
+        if (particle.position.y > 20) particle.position.y = -20;
+        if (particle.position.z < -20) particle.position.z = 20;
+        if (particle.position.z > 20) particle.position.z = -20;
+    });
+    redParticles.forEach((particle, index) => {
         // Update particle positions with assigned velocities
         particle.position.add(velocities[index]);
 
