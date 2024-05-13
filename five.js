@@ -23,12 +23,13 @@ const greyParticles = [];
 const orangeParticles = [];
 
 // Create random initial velocities for particles
+// Create random initial velocities for particles
 const velocities = [];
 for (let i = 0; i < numParticles; i++) {
     velocities.push(new THREE.Vector3(
-        Math.random() * 0.005 - 0.0025, // x (slower)
-        Math.random() * 0.005 - 0.0025, // y (slower)
-        Math.random() * 0.005 - 0.0025  // z (slower)
+        Math.random() * 0.001 - 0.0005, // x (slower)
+        Math.random() * 0.001 - 0.0005, // y (slower)
+        Math.random() * 0.001 - 0.0005  // z (slower)
     ));
 }
 
