@@ -39,12 +39,12 @@
         font-family: 'BerkeleyMonoVariable', monospace; /* Apply the custom font as the primary font with a fallback to sans-serif */
         }
 
-        /* Container style
+        /* Container style */
         .container {
           max-width: 1200px;
           margin: 0 auto;
           padding: 20px;
-        } */
+        }
     
         /* Row style */
         .row {
@@ -53,11 +53,11 @@
           margin: 0 -10px; /* Adjust margin to compensate for column padding */
         }
     
-        /* Column style
+        /* Column style */
         .column {
           flex: 1;
           padding: 0 10px; /* Add padding to create space between columns */
-        } */
+        }
     
         /* Image size and centering */
         .image-container {
@@ -120,10 +120,10 @@
             background-color: #ccc;
         }
 
-        /* Style the container
+        /* Style the container */
         .container {
             margin-right: 220px; /* Adjust margin-right to accommodate side navbar width */
-        } */
+        }
 
         /* Style the sections */
         section {
@@ -138,13 +138,17 @@
             height: 100%;
             filter: blur(10px);
         }
+        .narrow-block {
+            width: 50%; /* Adjust the width as needed */
+            margin: 0 auto; /* Center-align the block */
+            text-align: justify; /* Justify the text */
+            padding: 10px; /* Add padding for better readability */
+        }
       </style>
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/avatar1.jpg">
-
-  <script src="four.js"></script>
 
 </head>
 
@@ -190,9 +194,19 @@
     </div>
     </nav>
 
-<!-- Lavparticle-->
-<canvas id="canvas"></canvas>
-    
+    <!-- Lavparticle -->
+    <canvas id="canvas"></canvas>
+    <script src="lav_particle.js"></script>
+
+    <!-- Call the animation function -->
+    <script>
+        // Wait for the DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Call the function to start the animation
+            startAnimation();
+        });
+    </script>
+
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -389,14 +403,13 @@
             <!--
             <div class="column">
                 <div class="image-container">
-                    <a href="https://www.dropout.tv/game-changer">
-                        <img src="images/media/tv/gchan.jpg" alt="Game Changer">
+                    <a href="game-url">
+                        <img src="game-image" alt="game-title">
                     </a>
                 </div>
-                <a href="https://www.dropout.tv/game-changer">
-                <h3>Game Changer</h3>
-                </a>
-                <p>"the only game show where the game changes every show" - I could watch this show forever</p>
+                    <a href="game-url">
+                        <h4>game-title</h4>
+                    </a>
             </div>
             -->
         </div>
@@ -406,36 +419,79 @@
     <section id="Books">
         <h2>Books</h2>
         <!-- Your books content here -->
-        <p>books to come</p>
-        <!--
         <div class="row">
             <div class="column">
                 <div class="image-container">
-                    <img src="movie_image_1.jpg" alt="Movie Image 1">
+                    <a href="https://www.goodreads.com/en/book/show/12287209">
+                        <img src="images/media/books/wool.jpg" alt="Wool (2011) - Hugh Howey">
+                    </a>
                 </div>
-                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
-                <h4>Hypnotic Brass Ensemble</h4>
-                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+                <a href="https://www.goodreads.com/en/book/show/12287209">
+                <h3>Wool (2011) - Hugh Howey</h3>
+                </a>
+                <p>i watched the show (<i>Silo</i>) and didn't mind the first half, but felt that the murder/investigation plot ground the pacing to a halt. the pacing in the book was much better, though I'm curious to see how they handle the lack of plot available for season 2</p>
             </div>
             <div class="column">
                 <div class="image-container">
-                    <img src="movie_image_2.jpg" alt="Movie Image 2">
+                    <a href="https://www.goodreads.com/book/show/44492285-dune-messiah">
+                        <img src="images/media/books/dmess.jpg" alt="Dune Messiah (1969) - Frank Herbert">
+                    </a>
                 </div>
-                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
-                <h4>Hypnotic Brass Ensemble</h4>
-                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+                <a href="https://www.goodreads.com/book/show/44492285-dune-messiah">
+                <h3>Dune Messiah (1969) - Frank Herbert</h3>
+                </a>
+                <p>another adaptation pick - an easy enough read, with enough to keep me engaged, but it was reasonably light-on for plot. i'm curious to see whether Paul calling Hitler's Holocause 'rookie numbers' or telling Irulan to 'cuck him' will make it into the film version</p>
             </div>
             <div class="column">
                 <div class="image-container">
-                    <img src="movie_image_3.jpg" alt="Movie Image 3">
+                    <a href="https://www.goodreads.com/book/show/40121328-cribsheet">
+                        <img src="images/media/books/csadd.webp" alt="Cribsheet: A Data-Driven Guide to Better, More Relaxed Parenting, from Birth to Preschool (2019) - Emily Oster">
+                    </a>
                 </div>
-                <h3>This is a Mindfulness Drill: A Reimagining of Richard Youngs' 'Sapphie'</h3>
-                <h4>Hypnotic Brass Ensemble</h4>
-                <p>clean, fuzzy, warm, eerie, delicate, dynamic, living, cyclic, zone-out, floating</p>
+                    <a href="https://www.goodreads.com/book/show/40121328-cribsheet">
+                        <h4>Cribsheet: A Data-Driven Guide to Better, More Relaxed Parenting, from Birth to Preschool (2019) - Emily Oster</h4>
+                    </a>
+                    <p>a little light prep-work</p>
             </div>
-        -->
+        </div>
+        <h2>Faves and Personal Classics</h2>
+        <div class="row">
+            <div class="column">
+                <div class="image-container">
+                    <a href="https://www.goodreads.com/book/show/17934530-annihilation">
+                        <img src="images/media/books/annih.jpg" alt="Annihilation (2014) - Jeff Vandermeer">
+                    </a>
+                </div>
+                    <a href="https://www.goodreads.com/book/show/17934530-annihilation">
+                        <h4>Annihilation (2014) - Jeff Vandermeer</h4>
+                    </a>
+            </div>
+            <div class="column">
+                <div class="image-container">
+                    <a href="https://www.goodreads.com/book/show/24611567-songs-of-a-dead-dreamer-and-grimscribe">
+                        <img src="images/media/books/soadd.jpg" alt="Songs of a Dead Dreamer and Grimscribe (2015) - Thomas Ligotti">
+                    </a>
+                </div>
+                <a href="https://www.goodreads.com/book/show/24611567-songs-of-a-dead-dreamer-and-grimscribe">
+                    <h4>Songs of a Dead Dreamer and Grimscribe (2015) - Thomas Ligotti</h4>
+                </a>
+            </div>
+            <div class="column">
+                <div class="image-container">
+                    <a href="https://www.goodreads.com/book/show/44313716-saga-compendium-one">
+                        <img src="images/media/books/saga.jpg" alt="Saga, Compendium One (2019) - Brian K. Vaughan, Fiona Staples">
+                    </a>
+                </div>
+                    <a href="https://www.goodreads.com/book/show/44313716-saga-compendium-one">
+                        <h4>Saga, Compendium One (2019) - Brian K. Vaughan, Fiona Staples</h4>
+                    </a>
+            </div>
         </div>
     </section>
+</div>
+
+<div class="narrow-block">
+    <p>this is a new page. i'm still sussing out exactly how i want it to work. it'd be ace to link directly to the media, and for musicians with bandcamp pages, that's what i've done, but for media that'll inevitably bounce between streaming services i'm thinking a wiki entry is more helpful than a corporation's landing page. for books i've linked to goodreads - i don't love that, but i'm not sure what'd be better. feel free to @ me with any thoughts, suggestions, and media recs</p>
 </div>
 
 <!-- Footer
