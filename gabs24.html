@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<!-- Page Information
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta charset="utf-8">
+	<title>GABS 2023 Beer List</title>
+	<meta name="description" content="A searchable, checkable, and readable list of all the beers at GABS this year.">
+	<meta name="author" content="Jourdan Keillor">
+
+	<!-- Mobile Specific Metas
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Favicon
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="icon" type="image/png" href="images/gabsfav.png">
+
+	<!-- Table Style (Custom for this page)
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<style>
+		body {
+			background-color: #2E3440;
+			color: #D8DEE9;
+			font-family: sans-serif;
+		}
+
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			background-color: #3B4252;
+			color: #ECEFF4;
+		}
+
+		th, td {
+			text-align: left;
+			padding: 8px;
+			border-bottom: 1px solid #4C566A;
+		}
+
+		th {
+			background-color: #4C566A;
+			position: sticky;
+			top: 0;
+		}
+
+		.collapsible-header {
+			background-color: #4C566A;
+			cursor: pointer;
+			padding: 8px;
+			border: none;
+			text-align: left;
+			outline: none;
+			font-size: 16px;
+			transition: 0.4s;
+			color: #D8DEE9;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		.collapsible-header:hover {
+			background-color: #5E81AC;
+		}
+
+		.collapsible-content {
+			padding: 0 8px;
+			display: none;
+			overflow: hidden;
+			border: 1px solid #4C566A;
+			background-color: #434C5E;
+			color: #D8DEE9;
+		}
+
+		.collapsible-content p {
+			margin: 0;
+		}
+	</style>
+
+	<!-- Table Style (Custom for this page)
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<script>
+		function toggleContent(event) {
+			var content = event.target.nextElementSibling;
+			var rows = content.getElementsByTagName("tr");
+			if (content.style.display === "block") {
+				for (var i = 0; i < rows.length; i++) {
+					rows[i].style.display = "none";
+				}
+				content.style.display = "none";
+			} else {
+				content.style.display = "block";
+				for (var i = 0; i < rows.length; i++) {
+					rows[i].style.display = "";
+				}
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<table id="beers">
+		<thead>
+		  <tr>
+			<th>#</th>
+			<th>Brewery</th>
+			<th>Beer Name</th>
+			<th>Style</th>
+			<th>ABV</th>
+			<th>Complexity</th>
+			<th>Notes</th>
+			<th>Keen?</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+			<td>1</td>
+			<td>Clifton Hill Brewing</td>
+			<td>Honey Gum</td>
+			<td>Red IPA</td>
+			<td>7%</td>
+			<td>Moderate sweetness with eucalyptus notes</td>
+			<td><details><summary></summary>A toffee-like biscuity aroma gives way to caramel-driven flavors. Red gum honey delivers moderately sweet eucalyptus notes.</details></td>
+			<td><input type="checkbox" id="option001"></td>
+		  </tr>
+		  <tr>
+			<td>7</td>
+			<td>Red Duck</td>
+			<td>White Forest</td>
+			<td>Cream Ale</td>
+			<td>5.6%</td>
+			<td>Succulent cherries and creamy white chocolate</td>
+			<td><details><summary></summary>Succulent cherries and creamy white chocolate, harmoniously blended into a dreamy cream ale.</details></td>
+			<td><input type="checkbox" id="option007"></td>
+		  </tr>
+		  <tr>
+			<td>9</td>
+			<td>Canobolas Brewing Co</td>
+			<td>Screamin' Peach</td>
+			<td>Fruit Beer</td>
+			<td>4%</td>
+			<td>Peach and cayenne pepper</td>
+			<td><details><summary></summary>Wheat beer base with peaches and high Scoville cayenne pepper for an exciting rollercoaster of flavor.</details></td>
+			<td><input type="checkbox" id="option009"></td>
+		  </tr>
+		  <tr>
+			<td>10</td>
+			<td>Wandana Brewing Co</td>
+			<td>Funky Gose to Hollywood</td>
+			<td>Sour Gose</td>
+			<td>6%</td>
+			<td>Peach, lime, and citrus notes</td>
+			<td><details><summary></summary>Extra dry IPA with ripe peach, subtle lime, and citrus notes.</details></td>
+			<td><input type="checkbox" id="option010"></td>
+		  </tr>
+		  <tr>
+			<td>17</td>
+			<td>Cavalier Brewing</td>
+			<td>Smoke Rings</td>
+			<td>Sour Kettle Sour</td>
+			<td>4.9%</td>
+			<td>Smokey pineapple and cherry glazed ham</td>
+			<td><details><summary></summary>Smokey pineapple and cherry glazed ham flavors, with caramelized pineapple on the nose and sour cherry and pineapple on the palate.</details></td>
+			<td><input type="checkbox" id="option017"></td>
+		  </tr>
+		  <tr>
+			<td>18</td>
+			<td>Rusty Penny Brewing</td>
+			<td>Hybrid Theory Red Rye IPA</td>
+			<td>Red IPA</td>
+			<td>8%</td>
+			<td>Experimental HBC hop with toffee flavor</td>
+			<td><details><summary></summary>Experimental HBC hop combined with toffee flavor of red malts.</details></td>
+			<td><input type="checkbox" id="option018"></td>
+		  </tr>
+		  <tr>
+			<td>19</td>
+			<td>Devilbend Farm Beer Co</td>
+			<td>Open Relationship</td>
+			<td>Classic Pilsner</td>
+			<td>5%</td>
+			<td>Crisp, clean profile</td>
+			<td><details><summary></summary>Triple decoction open-fermented pilsner with a crisp, clean profile, malt sweetness, and noble hops.</details></td>
+			<td><input type="checkbox" id="option019"></td>
+		  </tr>
+		  <tr>
+			<td>20</td>
+			<td>Kaiju! Beer</td>
+			<td>Krushberry Pi 3.142</td>
+			<td>Sour Pastry</td>
+			<td>3.1%</td>
+			<td>Vanilla and pie crust with juicy Krushberries</td>
+			<td><details><summary></summary>Luscious vanilla and pie crust blend with the unmistakable flavor of juicy Krushberries.</details></td>
+			<td><input type="checkbox" id="option020"></td>
+		  </tr>
+		  <tr>
+			<td>27</td>
+			<td>Urban Alley Brewery</td>
+			<td>Yu Zerious? - Yuzu Russ!</td>
+			<td>Fruit Beer</td>
+			<td>2.8%</td>
+			<td>Yuzu (Japanese citrus fruit)</td>
+			<td><details><summary></summary>Yuzu (Japanese citrus fruit) Hefeweizen Radler/Shandy.</details></td>
+			<td><input type="checkbox" id="option027"></td>
+		  </tr>
+		  <tr>
+			<td>28</td>
+			<td>Hop Hen Brewing</td>
+			<td>Dubbel Dutch</td>
+			<td>Belgian Dubbel</td>
+			<td>7.8%</td>
+			<td>Deep, dark, and smooth</td>
+			<td><details><summary></summary>Deep, dark, and smooth Belgian Dubbel inspired by Dutch sweet biscuit treat 'Specuulas'.</details></td>
+			<td><input type="checkbox" id="option028"></td>
+		  </tr>
+		  <tr>
+			<td>29</td>
+			<td>Bowden Brewing</td>
+			<td>Soolong Sucka</td>
+			<td>American IPA</td>
+			<td>6.5%</td>
+			<td>New world hops with old world tea</td>
+			<td><details><summary></summary>Blending new world hops with old world tea. Aromas of Oolong and black tea, with hints of raspberry and monk pear.</details></td>
+			<td><input type="checkbox" id="option029"></td>
+		  </tr>
+		  <tr>
+			<td>30</td>
+			<td>Captain Bligh's Brewery</td>
+			<td>Wise and the Foolish</td>
+			<td>Weizenbock</td>
+			<td>5.8%</td>
+			<td>Malty, bready, caramel with hints of banana and spice</td>
+			<td><details><summary></summary>Malty, bready, caramel with hints of banana and spice, based on a very old French/Belgium Gissete style.</details></td>
+			<td><input type="checkbox" id="option030"></td>
+		  </tr>
+		  <tr>
+			<td>37</td>
+			<td>Bobs Beer</td>
+			<td>Blackberries, Blueberries and Sour Patch Kids!</td>
+			<td>Sour Kettle Sour</td>
+			<td>4.5%</td>
+			<td>Sour with notes of berries and dark fruit</td>
+			<td><details><summary></summary>Sour front palate with notes of berries and other dark fruit, using European yeast for a funky element.</details></td>
+			<td><input type="checkbox" id="option037"></td>
+		  </tr>
+		  <tr>
+			<td>39</td>
+			<td>Badlands Brewery</td>
+			<td>Feiladh Mor ("Great Kilt")</td>
+			<td>Scotch Ale/Wee Heavy</td>
+			<td>9.1%</td>
+			<td>Rich, malty, boozy, and smooth</td>
+			<td><details><summary></summary>Rich, malty, boozy, and smooth. Pair with deep-fried Mars bar and a depth-charge of peaty Scotch.</details></td>
+			<td><input type="checkbox" id="option039"></td>
+		  </tr>
+		  <tr>
+			<td>40</td>
+			<td>Wayward Brewing Co</td>
+			<td>Wayward Jungle Juice Mai TaiPA</td>
+			<td>Fruit Beer</td>
+			<td>6.5%</td>
+			<td>Citrus, tropical IPA with orange, pineapple, and orgeat</td>
+			<td><details><summary></summary>Citrus, tropical IPA with orange, pineapple, and orgeat, complemented by Nelson Sauvin, Idaho 7, and Motueka hops.</details></td>
+			<td><input type="checkbox" id="option040"></td>
+		  </tr>
+		  <tr>
+			<td>41</td>
+			<td>Shelter Brewing Co</td>
+			<td>Haze Train</td>
+			<td>IPA Hazy</td>
+			<td>5.7%</td>
+			<td>Citrus, tropical, and punchy</td>
+			<td><details><summary></summary>Citrus, tropical, and punchy.</details></td>
+			<td><input type="checkbox" id="option041"></td>
+		  </tr>
+		  <tr>
+			<td>43</td>
+			<td>Forrest Brewing Co</td>
+			<td>Triple Sticky</td>
+			<td>Hoppy Lager</td>
+			<td>8.5%</td>
+			<td>Turbocharged Wet Hop Lager</td>
+			<td><details><summary></summary>Turbocharged Wet Hop Lager with Australian malt and hand-picked hops.</details></td>
+			<td><input type="checkbox" id="option043"></td>
+		  </tr>
+		  <tr>
+			<td>49</td>
+			<td>Rocks Brewing Co</td>
+			<td>Pandan White Chocolate Stout</td>
+			<td>Stout Pastry</td>
+			<td>6%</td>
+			<td>Pandan, chocolate, and coffee</td>
+			<td><details><summary></summary>Pandan, chocolate, and coffee in a thick light ale.</details></td>
+			<td><input type="checkbox" id="option049"></td>
+		  </tr>
+		  <tr>
+			<td>50</td>
+			<td>Beereratne Brewing</td>
+			<td>Sparkling Saison Noir</td>
+			<td>Saison/Farmhouse Ale</td>
+			<td>7.2%</td>
+			<td>Crisp, dry saison with red cherry and spice</td>
+			<td><details><summary></summary>Crisp, dry saison featuring red cherry, spice, and floral notes with a slight pink hue from fresh Wandin cherries.</details></td>
+			<td><input type="checkbox" id="option050"></td>
+		  </tr>
+		  <tr>
+			<td>57</td>
+			<td>Ramblers Ale Works</td>
+			<td>Honey Honey, Joy Joy</td>
+			<td>Specialty Beer</td>
+			<td>6.5%</td>
+			<td>Toasted corn and honey</td>
+			<td><details><summary></summary>Flavors of toasted corn and honey, reminiscent of Honey Joys.</details></td>
+			<td><input type="checkbox" id="option057"></td>
+		  </tr>
+		  <tr>
+			<td>59</td>
+			<td>The Mill Brewery</td>
+			<td>Black Forest Gateau</td>
+			<td>Stout</td>
+			<td>5.6%</td>
+			<td>Dark cocoa and juicy cherries</td>
+			<td><details><summary></summary>Dark cocoa and juicy cherries with specialty malts from New Zealand, Australia, and Germany.</details></td>
+			<td><input type="checkbox" id="option059"></td>
+		  </tr>
+		  <tr>
+			<td>60</td>
+			<td>Weihenstephan</td>
+			<td>Braupakt</td>
+			<td>Blonde Ale</td>
+			<td>6.5%</td>
+			<td>Spicy with yeast note, fruity, and strong</td>
+			<td><details><summary></summary>Spicy with characteristic yeast note, fruity, and strong.</details></td>
+			<td><input type="checkbox" id="option060"></td>
+		  </tr>
+		  <tr>
+			<td>61</td>
+			<td>Good Land Brewing Co</td>
+			<td>The Cowboy Slickshake</td>
+			<td>Pastry Stout</td>
+			<td>8.5%</td>
+			<td>Chocolate, butterscotch, and milk</td>
+			<td><details><summary></summary>Smoothie stout with flavors of chocolate, butterscotch, and milk.</details></td>
+			<td><input type="checkbox" id="option061"></td>
+		  </tr>
+		  <tr>
+			<td>63</td>
+			<td>Straddie Brewing Co</td>
+			<td>Vanta Manta</td>
+			<td>Schwarzbier</td>
+			<td>5.8%</td>
+			<td>Dark, cold, creamy dark lager</td>
+			<td><details><summary></summary>Dark, cold, creamy dark lager served on Nitro.</details></td>
+			<td><input type="checkbox" id="option063"></td>
+		  </tr>
+		  <tr>
+			<td>67</td>
+			<td>Mountain Goat Beer</td>
+			<td>Spi-Ski Margarita Gose</td>
+			<td>Sour Gose</td>
+			<td>6%</td>
+			<td>Spicy Margarita with Tajin salt, tequila, and ghost chili</td>
+			<td><details><summary></summary>Spicy Margarita Gose with Tajin salt, tequila, and ghost chili.</details></td>
+			<td><input type="checkbox" id="option067"></td>
+		  </tr>
+		  <tr>
+			<td>69</td>
+			<td>Copperlode Brewing Co</td>
+			<td>Slatterpuss Watermelon Sour</td>
+			<td>Fruit Beer</td>
+			<td>4%</td>
+			<td>Watermelon and hibiscus flower</td>
+			<td><details><summary></summary>Watermelon and hibiscus flower kettle sour, balanced tartness.</details></td>
+			<td><input type="checkbox" id="option069"></td>
+		  </tr>
+		  <tr>
+			<td>70</td>
+			<td>Boatrocker Brewers & Distillers</td>
+			<td>Daily Tot</td>
+			<td>UK Brown Ale</td>
+			<td>6.1%</td>
+			<td>Rich, malty brown ale with raisins and oak barrel chips</td>
+			<td><details><summary></summary>Rich, malty brown ale with raisins and oak barrel chips soaked in Boatrocker's spiced rum.</details></td>
+			<td><input type="checkbox" id="option070"></td>
+		  </tr>
+		  <tr>
+			<td>71</td>
+			<td>Revel Brewing Co</td>
+			<td>Fantastic Sour</td>
+			<td>Kettle Sour</td>
+			<td>3.5%</td>
+			<td>Fanta-inspired orange kettle sour</td>
+			<td><details><summary></summary>Fanta-inspired orange kettle sour with a zesty aroma.</details></td>
+			<td><input type="checkbox" id="option071"></td>
+		  </tr>
+		  <tr>
+			<td>77</td>
+			<td>Psycho Suzies Brewing</td>
+			<td>Insane Kölche Posse</td>
+			<td>Kölsch</td>
+			<td>7%</td>
+			<td>Clean, crisp, citrusy</td>
+			<td><details><summary></summary>Clean, crisp, citrusy, built like a West Coast IPA but fermented like a Kölsch.</details></td>
+			<td><input type="checkbox" id="option077"></td>
+		  </tr>
+		  <tr>
+			<td>80</td>
+			<td>Earth Beer Company</td>
+			<td>Golden Roots - Spiced Volcanic Sweet Potato Copper Ale</td>
+			<td>Experimental Beer</td>
+			<td>5%</td>
+			<td>Rich, malty, and subtly spiced</td>
+			<td><details><summary></summary>Rich, malty, and subtly spiced copper ale with golden sweet potatoes.</details></td>
+			<td><input type="checkbox" id="option080"></td>
+		  </tr>
+		  <tr>
+			<td>81</td>
+			<td>Morrison Brewery</td>
+			<td>Smoked Kelp Stout</td>
+			<td>Smoked Beer (Non Rauchbier)</td>
+			<td>10%</td>
+			<td>Peat Smoked Kelp</td>
+			<td><details><summary></summary>Peat Smoked Kelp Imperial Stout aged in Islay whisky casks.</details></td>
+			<td><input type="checkbox" id="option081"></td>
+		  </tr>
+		  <tr>
+			<td>91</td>
+			<td>Future Magic Brewing Co.</td>
+			<td>Sweet As Pie</td>
+			<td>Specialty Beer</td>
+			<td>7%</td>
+			<td>Apple Pie biscuit ale</td>
+			<td><details><summary></summary>Apple Pie biscuit ale with flavors of apple pie.</details></td>
+			<td><input type="checkbox" id="option091"></td>
+		  </tr>
+		  <tr>
+			<td>101</td>
+			<td>Lady Burra Brewhouse</td>
+			<td>Strawberry Champagne Beer</td>
+			<td>Specialty Beer</td>
+			<td>6.5%</td>
+			<td>Super dry beer with strawberries</td>
+			<td><details><summary></summary>Super dry beer with strawberries, mimicking a 'brut' wine with a pink hue.</details></td>
+			<td><input type="checkbox" id="option101"></td>
+		  </tr>
+		  <tr>
+			<td>113</td>
+			<td>Valhalla Brewing</td>
+			<td>Satanic Mills</td>
+			<td>Imperial Dark Ale</td>
+			<td>11%</td>
+			<td>Dark, smooth, malt-driven</td>
+			<td><details><summary></summary>Dark, smooth, malt-driven ale with chocolate, coffee, and dark fruit notes.</details></td>
+			<td><input type="checkbox" id="option113"></td>
+		  </tr>
+		  <tr>
+			<td>115</td>
+			<td>Hargreaves Hill Brewing Co</td>
+			<td>Barrel Age Russian Imperial Stout</td>
+			<td>Russian Imperial Stout</td>
+			<td>13.4%</td>
+			<td>Rich, roasty, and boozy</td>
+			<td><details><summary></summary>Rich, roasty, and boozy with notes of chocolate, coffee, and bourbon.</details></td>
+			<td><input type="checkbox" id="option115"></td>
+		  </tr>
+		  <tr>
+			<td>118</td>
+			<td>Liberty Brewing Co</td>
+			<td>Oh Brother</td>
+			<td>Imperial Stout</td>
+			<td>10%</td>
+			<td>Rich, roasty, and smooth</td>
+			<td><details><summary></summary>Rich, roasty, and smooth with chocolate and coffee flavors.</details></td>
+			<td><input type="checkbox" id="option118"></td>
+		  </tr>
+		  <tr>
+			<td>120</td>
+			<td>Hope Brewery</td>
+			<td>Barrel Aged Mexican Stout</td>
+			<td>Imperial Stout</td>
+			<td>10.5%</td>
+			<td>Rich, spicy, and chocolatey</td>
+			<td><details><summary></summary>Rich, spicy, and chocolatey with notes of cinnamon and vanilla.</details></td>
+			<td><input type="checkbox" id="option120"></td>
+		  </tr>
+		</tbody>
+	  </table>
+
+
+	<div class="w3-container">
+		<div class="w3-show-inline-block">
+		<div class="w3-bar">
+		<input style="float: left;" type="text" id="myInput" onkeyup="filterTable()" placeholder="Search...">
+		<button style="float: right;">😈Check all😈</button>
+		</div>
+		</div>
+	</div>
+ <br>
+	<br>
+	  
+	  
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/jquery.cookie/1.4.0/jquery.cookie.min.js"></script>
+
+    <script>
+      function handleButtonClick(button){
+        if ($(button).text().match("😈Check all😈")){
+          $(":checkbox").prop("checked", true)
+        } else {
+          $(":checkbox").prop("checked", false)
+        };
+        updateButtonStatus();
+      }
+
+      function updateButtonStatus(){
+        var allChecked = $(":checkbox").length === $(":checkbox:checked").length;
+        $("button").text(allChecked? "👼Uncheck all👼" : "😈Check all😈");
+      }
+
+      function updateCookie(){
+        var elementValues = {};
+        $(":checkbox").each(function(){
+          elementValues[this.id] = this.checked;
+        });
+
+        elementValues["buttonText"] = $("button").text();
+        $.cookie('elementValues', elementValues, { expires: 7, path: '/' })
+      }
+
+      function repopulateFormELements(){
+        var elementValues = $.cookie('elementValues');
+        if(elementValues){
+          Object.keys(elementValues).forEach(function(element) {
+            var checked = elementValues[element];
+            $("#" + element).prop('checked', checked);
+          });
+
+          $("button").text(elementValues["buttonText"])
+        }
+      }
+
+      $(":checkbox").on("change", function(){
+        updateButtonStatus();
+        updateCookie();
+      });
+
+      $("button").on("click", function() {
+        handleButtonClick(this);
+        updateCookie();
+      });
+
+      $.cookie.json = true;
+      repopulateFormELements();
+	</script>
+<script>
+	function filterTable() {
+		var input, filter, table, tr, td, i, j, th;
+		input = document.getElementById("myInput");
+		filter = input.value.toUpperCase();
+		table = document.getElementById("beers");
+		tr = table.getElementsByTagName("tr");
+	
+		for (i = 0; i < tr.length; i++) {
+			td = tr[i].getElementsByTagName("td");
+			th = tr[i].getElementsByTagName("th");
+			var flag = false;
+			
+			for (j = 0; j < td.length || j < th.length; j++) {
+				if (j < td.length) {
+					if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+						flag = true;
+					}
+				}
+				if (j < th.length) {
+					if (th[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+						flag = true;
+					}
+				}
+			}
+			if (flag) {
+				tr[i].style.display = "";
+			} else {
+				tr[i].style.display = "none";
+			}
+		}
+	}
+	</script>
+	
+  <!-- Footer
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <footer style="bottom: 0; width: 100%; height: 50px; color: #D8DEE9; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+	<div class="row">
+		<div class="column">
+		  <p style="font-size: 75%;">© 2023 Jourdan Keillor · <a href="privacy.html">Privacy</a>
+			<br>Powered by <a href="https://vercel.com/">Vercel</a> and forked from <a href="https://littlelink.io/">LittleLink</a></p>
+		</div>
+	  </div>
+  </footer>
+  
+    <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
