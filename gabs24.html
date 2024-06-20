@@ -108,7 +108,6 @@
 			<th>Beer Name</th>
 			<th>Style</th>
 			<th>ABV</th>
-			<th>Complexity</th>
 			<th>Notes</th>
 			<th>Keen?</th>
 		  </tr>
@@ -120,8 +119,16 @@
 			<td>Honey Gum</td>
 			<td>Red IPA</td>
 			<td>7%</td>
-			<td>Moderate sweetness with eucalyptus notes</td>
 			<td><details><summary></summary>A toffee-like biscuity aroma gives way to caramel-driven flavors. Red gum honey delivers moderately sweet eucalyptus notes.</details></td>
+			<td><input type="checkbox" id="option001"></td>
+		  </tr>
+		  <tr>
+			<td>2</td>
+			<td>Brewmanity Beer Co</td>
+			<td>Choc L'Orange</td>
+			<td>Imperial Stout</td>
+			<td>7%</td>
+			<td><details><summary></summary>A selection of the finest after dinner choc orange confectionaries rolled into a creamy stout.</details></td>
 			<td><input type="checkbox" id="option001"></td>
 		  </tr>
 		  <tr>
@@ -130,7 +137,6 @@
 			<td>White Forest</td>
 			<td>Cream Ale</td>
 			<td>5.6%</td>
-			<td>Succulent cherries and creamy white chocolate</td>
 			<td><details><summary></summary>Succulent cherries and creamy white chocolate, harmoniously blended into a dreamy cream ale.</details></td>
 			<td><input type="checkbox" id="option007"></td>
 		  </tr>
@@ -140,7 +146,6 @@
 			<td>Screamin' Peach</td>
 			<td>Fruit Beer</td>
 			<td>4%</td>
-			<td>Peach and cayenne pepper</td>
 			<td><details><summary></summary>Wheat beer base with peaches and high Scoville cayenne pepper for an exciting rollercoaster of flavor.</details></td>
 			<td><input type="checkbox" id="option009"></td>
 		  </tr>
@@ -150,7 +155,6 @@
 			<td>Funky Gose to Hollywood</td>
 			<td>Sour Gose</td>
 			<td>6%</td>
-			<td>Peach, lime, and citrus notes</td>
 			<td><details><summary></summary>Extra dry IPA with ripe peach, subtle lime, and citrus notes.</details></td>
 			<td><input type="checkbox" id="option010"></td>
 		  </tr>
@@ -160,7 +164,6 @@
 			<td>Smoke Rings</td>
 			<td>Sour Kettle Sour</td>
 			<td>4.9%</td>
-			<td>Smokey pineapple and cherry glazed ham</td>
 			<td><details><summary></summary>Smokey pineapple and cherry glazed ham flavors, with caramelized pineapple on the nose and sour cherry and pineapple on the palate.</details></td>
 			<td><input type="checkbox" id="option017"></td>
 		  </tr>
@@ -170,7 +173,6 @@
 			<td>Hybrid Theory Red Rye IPA</td>
 			<td>Red IPA</td>
 			<td>8%</td>
-			<td>Experimental HBC hop with toffee flavor</td>
 			<td><details><summary></summary>Experimental HBC hop combined with toffee flavor of red malts.</details></td>
 			<td><input type="checkbox" id="option018"></td>
 		  </tr>
@@ -180,7 +182,6 @@
 			<td>Open Relationship</td>
 			<td>Classic Pilsner</td>
 			<td>5%</td>
-			<td>Crisp, clean profile</td>
 			<td><details><summary></summary>Triple decoction open-fermented pilsner with a crisp, clean profile, malt sweetness, and noble hops.</details></td>
 			<td><input type="checkbox" id="option019"></td>
 		  </tr>
@@ -190,7 +191,6 @@
 			<td>Krushberry Pi 3.142</td>
 			<td>Sour Pastry</td>
 			<td>3.1%</td>
-			<td>Vanilla and pie crust with juicy Krushberries</td>
 			<td><details><summary></summary>Luscious vanilla and pie crust blend with the unmistakable flavor of juicy Krushberries.</details></td>
 			<td><input type="checkbox" id="option020"></td>
 		  </tr>
@@ -200,7 +200,6 @@
 			<td>Yu Zerious? - Yuzu Russ!</td>
 			<td>Fruit Beer</td>
 			<td>2.8%</td>
-			<td>Yuzu (Japanese citrus fruit)</td>
 			<td><details><summary></summary>Yuzu (Japanese citrus fruit) Hefeweizen Radler/Shandy.</details></td>
 			<td><input type="checkbox" id="option027"></td>
 		  </tr>
@@ -210,7 +209,6 @@
 			<td>Dubbel Dutch</td>
 			<td>Belgian Dubbel</td>
 			<td>7.8%</td>
-			<td>Deep, dark, and smooth</td>
 			<td><details><summary></summary>Deep, dark, and smooth Belgian Dubbel inspired by Dutch sweet biscuit treat 'Specuulas'.</details></td>
 			<td><input type="checkbox" id="option028"></td>
 		  </tr>
@@ -220,7 +218,6 @@
 			<td>Soolong Sucka</td>
 			<td>American IPA</td>
 			<td>6.5%</td>
-			<td>New world hops with old world tea</td>
 			<td><details><summary></summary>Blending new world hops with old world tea. Aromas of Oolong and black tea, with hints of raspberry and monk pear.</details></td>
 			<td><input type="checkbox" id="option029"></td>
 		  </tr>
@@ -230,7 +227,6 @@
 			<td>Wise and the Foolish</td>
 			<td>Weizenbock</td>
 			<td>5.8%</td>
-			<td>Malty, bready, caramel with hints of banana and spice</td>
 			<td><details><summary></summary>Malty, bready, caramel with hints of banana and spice, based on a very old French/Belgium Gissete style.</details></td>
 			<td><input type="checkbox" id="option030"></td>
 		  </tr>
@@ -240,7 +236,6 @@
 			<td>Blackberries, Blueberries and Sour Patch Kids!</td>
 			<td>Sour Kettle Sour</td>
 			<td>4.5%</td>
-			<td>Sour with notes of berries and dark fruit</td>
 			<td><details><summary></summary>Sour front palate with notes of berries and other dark fruit, using European yeast for a funky element.</details></td>
 			<td><input type="checkbox" id="option037"></td>
 		  </tr>
@@ -250,7 +245,6 @@
 			<td>Feiladh Mor ("Great Kilt")</td>
 			<td>Scotch Ale/Wee Heavy</td>
 			<td>9.1%</td>
-			<td>Rich, malty, boozy, and smooth</td>
 			<td><details><summary></summary>Rich, malty, boozy, and smooth. Pair with deep-fried Mars bar and a depth-charge of peaty Scotch.</details></td>
 			<td><input type="checkbox" id="option039"></td>
 		  </tr>
@@ -260,7 +254,6 @@
 			<td>Wayward Jungle Juice Mai TaiPA</td>
 			<td>Fruit Beer</td>
 			<td>6.5%</td>
-			<td>Citrus, tropical IPA with orange, pineapple, and orgeat</td>
 			<td><details><summary></summary>Citrus, tropical IPA with orange, pineapple, and orgeat, complemented by Nelson Sauvin, Idaho 7, and Motueka hops.</details></td>
 			<td><input type="checkbox" id="option040"></td>
 		  </tr>
@@ -270,7 +263,6 @@
 			<td>Haze Train</td>
 			<td>IPA Hazy</td>
 			<td>5.7%</td>
-			<td>Citrus, tropical, and punchy</td>
 			<td><details><summary></summary>Citrus, tropical, and punchy.</details></td>
 			<td><input type="checkbox" id="option041"></td>
 		  </tr>
@@ -280,7 +272,6 @@
 			<td>Triple Sticky</td>
 			<td>Hoppy Lager</td>
 			<td>8.5%</td>
-			<td>Turbocharged Wet Hop Lager</td>
 			<td><details><summary></summary>Turbocharged Wet Hop Lager with Australian malt and hand-picked hops.</details></td>
 			<td><input type="checkbox" id="option043"></td>
 		  </tr>
@@ -290,7 +281,6 @@
 			<td>Pandan White Chocolate Stout</td>
 			<td>Stout Pastry</td>
 			<td>6%</td>
-			<td>Pandan, chocolate, and coffee</td>
 			<td><details><summary></summary>Pandan, chocolate, and coffee in a thick light ale.</details></td>
 			<td><input type="checkbox" id="option049"></td>
 		  </tr>
@@ -300,7 +290,6 @@
 			<td>Sparkling Saison Noir</td>
 			<td>Saison/Farmhouse Ale</td>
 			<td>7.2%</td>
-			<td>Crisp, dry saison with red cherry and spice</td>
 			<td><details><summary></summary>Crisp, dry saison featuring red cherry, spice, and floral notes with a slight pink hue from fresh Wandin cherries.</details></td>
 			<td><input type="checkbox" id="option050"></td>
 		  </tr>
@@ -310,7 +299,6 @@
 			<td>Honey Honey, Joy Joy</td>
 			<td>Specialty Beer</td>
 			<td>6.5%</td>
-			<td>Toasted corn and honey</td>
 			<td><details><summary></summary>Flavors of toasted corn and honey, reminiscent of Honey Joys.</details></td>
 			<td><input type="checkbox" id="option057"></td>
 		  </tr>
@@ -320,7 +308,6 @@
 			<td>Black Forest Gateau</td>
 			<td>Stout</td>
 			<td>5.6%</td>
-			<td>Dark cocoa and juicy cherries</td>
 			<td><details><summary></summary>Dark cocoa and juicy cherries with specialty malts from New Zealand, Australia, and Germany.</details></td>
 			<td><input type="checkbox" id="option059"></td>
 		  </tr>
@@ -330,7 +317,6 @@
 			<td>Braupakt</td>
 			<td>Blonde Ale</td>
 			<td>6.5%</td>
-			<td>Spicy with yeast note, fruity, and strong</td>
 			<td><details><summary></summary>Spicy with characteristic yeast note, fruity, and strong.</details></td>
 			<td><input type="checkbox" id="option060"></td>
 		  </tr>
@@ -340,7 +326,6 @@
 			<td>The Cowboy Slickshake</td>
 			<td>Pastry Stout</td>
 			<td>8.5%</td>
-			<td>Chocolate, butterscotch, and milk</td>
 			<td><details><summary></summary>Smoothie stout with flavors of chocolate, butterscotch, and milk.</details></td>
 			<td><input type="checkbox" id="option061"></td>
 		  </tr>
@@ -350,7 +335,6 @@
 			<td>Vanta Manta</td>
 			<td>Schwarzbier</td>
 			<td>5.8%</td>
-			<td>Dark, cold, creamy dark lager</td>
 			<td><details><summary></summary>Dark, cold, creamy dark lager served on Nitro.</details></td>
 			<td><input type="checkbox" id="option063"></td>
 		  </tr>
@@ -360,7 +344,6 @@
 			<td>Spi-Ski Margarita Gose</td>
 			<td>Sour Gose</td>
 			<td>6%</td>
-			<td>Spicy Margarita with Tajin salt, tequila, and ghost chili</td>
 			<td><details><summary></summary>Spicy Margarita Gose with Tajin salt, tequila, and ghost chili.</details></td>
 			<td><input type="checkbox" id="option067"></td>
 		  </tr>
@@ -370,7 +353,6 @@
 			<td>Slatterpuss Watermelon Sour</td>
 			<td>Fruit Beer</td>
 			<td>4%</td>
-			<td>Watermelon and hibiscus flower</td>
 			<td><details><summary></summary>Watermelon and hibiscus flower kettle sour, balanced tartness.</details></td>
 			<td><input type="checkbox" id="option069"></td>
 		  </tr>
@@ -380,7 +362,6 @@
 			<td>Daily Tot</td>
 			<td>UK Brown Ale</td>
 			<td>6.1%</td>
-			<td>Rich, malty brown ale with raisins and oak barrel chips</td>
 			<td><details><summary></summary>Rich, malty brown ale with raisins and oak barrel chips soaked in Boatrocker's spiced rum.</details></td>
 			<td><input type="checkbox" id="option070"></td>
 		  </tr>
@@ -390,7 +371,6 @@
 			<td>Fantastic Sour</td>
 			<td>Kettle Sour</td>
 			<td>3.5%</td>
-			<td>Fanta-inspired orange kettle sour</td>
 			<td><details><summary></summary>Fanta-inspired orange kettle sour with a zesty aroma.</details></td>
 			<td><input type="checkbox" id="option071"></td>
 		  </tr>
@@ -400,7 +380,6 @@
 			<td>Insane Kölche Posse</td>
 			<td>Kölsch</td>
 			<td>7%</td>
-			<td>Clean, crisp, citrusy</td>
 			<td><details><summary></summary>Clean, crisp, citrusy, built like a West Coast IPA but fermented like a Kölsch.</details></td>
 			<td><input type="checkbox" id="option077"></td>
 		  </tr>
@@ -410,7 +389,6 @@
 			<td>Golden Roots - Spiced Volcanic Sweet Potato Copper Ale</td>
 			<td>Experimental Beer</td>
 			<td>5%</td>
-			<td>Rich, malty, and subtly spiced</td>
 			<td><details><summary></summary>Rich, malty, and subtly spiced copper ale with golden sweet potatoes.</details></td>
 			<td><input type="checkbox" id="option080"></td>
 		  </tr>
@@ -420,7 +398,6 @@
 			<td>Smoked Kelp Stout</td>
 			<td>Smoked Beer (Non Rauchbier)</td>
 			<td>10%</td>
-			<td>Peat Smoked Kelp</td>
 			<td><details><summary></summary>Peat Smoked Kelp Imperial Stout aged in Islay whisky casks.</details></td>
 			<td><input type="checkbox" id="option081"></td>
 		  </tr>
@@ -430,7 +407,6 @@
 			<td>Sweet As Pie</td>
 			<td>Specialty Beer</td>
 			<td>7%</td>
-			<td>Apple Pie biscuit ale</td>
 			<td><details><summary></summary>Apple Pie biscuit ale with flavors of apple pie.</details></td>
 			<td><input type="checkbox" id="option091"></td>
 		  </tr>
@@ -440,7 +416,6 @@
 			<td>Strawberry Champagne Beer</td>
 			<td>Specialty Beer</td>
 			<td>6.5%</td>
-			<td>Super dry beer with strawberries</td>
 			<td><details><summary></summary>Super dry beer with strawberries, mimicking a 'brut' wine with a pink hue.</details></td>
 			<td><input type="checkbox" id="option101"></td>
 		  </tr>
@@ -450,7 +425,6 @@
 			<td>Satanic Mills</td>
 			<td>Imperial Dark Ale</td>
 			<td>11%</td>
-			<td>Dark, smooth, malt-driven</td>
 			<td><details><summary></summary>Dark, smooth, malt-driven ale with chocolate, coffee, and dark fruit notes.</details></td>
 			<td><input type="checkbox" id="option113"></td>
 		  </tr>
@@ -460,7 +434,6 @@
 			<td>Barrel Age Russian Imperial Stout</td>
 			<td>Russian Imperial Stout</td>
 			<td>13.4%</td>
-			<td>Rich, roasty, and boozy</td>
 			<td><details><summary></summary>Rich, roasty, and boozy with notes of chocolate, coffee, and bourbon.</details></td>
 			<td><input type="checkbox" id="option115"></td>
 		  </tr>
@@ -470,7 +443,6 @@
 			<td>Oh Brother</td>
 			<td>Imperial Stout</td>
 			<td>10%</td>
-			<td>Rich, roasty, and smooth</td>
 			<td><details><summary></summary>Rich, roasty, and smooth with chocolate and coffee flavors.</details></td>
 			<td><input type="checkbox" id="option118"></td>
 		  </tr>
@@ -480,7 +452,6 @@
 			<td>Barrel Aged Mexican Stout</td>
 			<td>Imperial Stout</td>
 			<td>10.5%</td>
-			<td>Rich, spicy, and chocolatey</td>
 			<td><details><summary></summary>Rich, spicy, and chocolatey with notes of cinnamon and vanilla.</details></td>
 			<td><input type="checkbox" id="option120"></td>
 		  </tr>
