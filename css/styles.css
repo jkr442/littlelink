@@ -224,7 +224,7 @@ nav {
 }
 
 nav .tab {
-    padding: 15px 25px;
+    padding: 10px 10px;
     color: var(--fg-color);
     text-decoration: none;
     background-color: #282828;
