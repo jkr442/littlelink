@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.vx = Math.random() * 0.2 - 0.1; // Adjust velocity for slower movement
             this.vy = Math.random() * 0.2 - 0.1; // Adjust velocity for slower movement
             this.radius = 3;
-            this.baseColor = '#FFA500'; // Base color
+            this.baseColor = '#282828'; // Base color
             this.color = this.baseColor;
             this.speedLimit = 0.01; // Set speed limit
             this.gravStickiness = 1; // Grav-stickiness factor
