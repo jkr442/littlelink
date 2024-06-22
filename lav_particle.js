@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.color = this.baseColor;
             this.speedLimit = 0.01; // Set speed limit
             this.gravStickiness = 1; // Grav-stickiness factor
-            this.growthFactor = 0.01; // Growth factor
+            this.growthFactor = 0.001; // Growth factor
         }
 
         draw() {
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Create particles
     const particles = [];
-    for (let i = 0; i < 75; i++) {
+    for (let i = 0; i < 50; i++) {
         particles.push(new Particle());
     }
 
