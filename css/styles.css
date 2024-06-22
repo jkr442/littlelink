@@ -1,0 +1,70 @@
+:root {
+    --bg-color: #282828;
+    --fg-color: #ebdbb2;
+    --highlight-color: #d79921;
+    --font-family: 'Berkeley Mono Variable', monospace;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+}
+
+header {
+    background-color: #3c3836;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    font-size: 1.5em;
+    color: var(--highlight-color);
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center; /* Center align tabs */
+    background-color: #3c3836;
+}
+
+nav .tab {
+    padding: 15px 25px;
+    color: var(--fg-color);
+    text-decoration: none;
+    background-color: #3c3836;
+    transition: background-color 0.3s;
+    font-size: 1em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 1px solid #3c3836;
+}
+
+nav .tab:hover {
+    background-color: #504945;
+}
+
+nav .tab.active {
+    background-color: #282828;
+    color: var(--highlight-color);
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+    background-color: #282828;
+}
+
+footer {
+    background-color: #282828;
+    color: #ebdbb2;
+    text-align: center;
+    padding: 20px 0;
+}
