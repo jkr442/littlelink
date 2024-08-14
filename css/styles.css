@@ -7,9 +7,6 @@
 - Code
 - Spacing
 - Utilities
-*
-* You'll find the button css in css/brands.css.
-*
 */
 
 /* Grid
@@ -212,7 +209,7 @@ header {
 }
 
 .header-title {
-    font-size: 1.5em;
+    font-size: 1em;
     color: var(--highlight-color);
     margin: 0;
 }
