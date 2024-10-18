@@ -21,7 +21,134 @@
     <link rel="preload" href="fonts/BerkeleyMonoVariable.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
     <!-- Navbar -->
+    <link rel="stylesheet" href="css/navbar.css">
     <script src="./navbar.js"></script>
+
+    <style>
+        /* Define the custom font */
+        @font-face {
+        font-family: 'BerkeleyMonoVariable';
+        src: url('fonts/berkeley-mono-variable-2.woff2') format('woff2')
+        /* Add additional font formats if necessary */
+        }
+
+        /* Apply the custom font to specific elements */
+        body {
+        font-family: 'BerkeleyMonoVariable', monospace;
+        }
+
+        /* Container style */
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 20px;
+        }
+    
+        /* Row style */
+        .row {
+          display: flex;
+          flex-wrap: wrap;
+          margin: 0 -10px; /* Adjust margin to compensate for column padding */
+        }
+    
+        /* Column style */
+        .column {
+          flex: 1;
+          padding: 0 10px; /* Add padding to create space between columns */
+        }
+    
+        /* Image size and centering */
+        .image-container {
+          text-align: center; /* Center-align text and inline elements */
+        }
+    
+        .image-container img {
+          display: block; /* Ensure images are treated as block elements */
+          width: 100%; /* Set image width to 100% of its container */
+          height: auto; /* Maintain aspect ratio */
+          margin: 0 auto; /* Center the image horizontally */
+        }
+    
+        /* Text centering */
+        h1, h2, h3, h4, p {
+          text-align: center; /* Center-align headings and paragraphs */
+        }
+    
+        /* Adjustments for mobile devices */
+        @media (max-width: 768px) {
+          .column {
+            flex: 1 0 100%; /* Each column takes full width on smaller screens */
+            padding: 0;
+          }
+        }
+
+        /* Style the side navbar */
+        .side-navbar {
+            position: fixed;
+            right: 0; /* Align to the right side */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Adjust to center */
+            padding-top: 0px; /* Adjust according to your navbar height */
+            width: auto; /* Adjust width dynamically */
+            overflow-y: auto;
+        }
+
+        /* Style the tab buttons */
+        .tab button {
+            display: block;
+            background-color: #282828;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            transition: 0.3s;
+            font-size: 16px;
+            margin-bottom: 5px;
+            text-align: left;
+            border-radius: 20px; /* Rounded corners */
+            font-family: 'Berkeley Mono Variable', monospace;
+            color: var(--fg-color)
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #282828;
+            color: var(--highlight-color);
+            font-weight: bold;
+        }
+
+        /* Style the active/current tablink */
+        .tab button.active {
+            background-color: #282828;
+            color: var(--highlight-color);
+            font-weight: bold;
+        }
+
+        /* Style the container */
+        .container {
+            margin-right: 220px; /* Adjust margin-right to accommodate side navbar width */
+        }
+
+        /* Style the sections */
+        section {
+            margin-top: 40px; /* Add space between sections */
+        }
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Ensure the canvas is behind other content */
+            width: 100%;
+            height: 100%;
+            filter: blur(10px);
+        }
+        .narrow-block {
+            width: 50%; /* Adjust the width as needed */
+            margin: 0 auto; /* Center-align the block */
+            text-align: justify; /* Justify the text */
+            padding: 10px; /* Add padding for better readability */
+        }
+      </style>
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -351,14 +478,16 @@
                     <h4>Songs of a Dead Dreamer and Grimscribe (2015) - Thomas Ligotti</h4>
                 </a>
             </div>
-            <div class="image-container">
-                <a href="https://www.goodreads.com/book/show/44313716-saga-compendium-one">
-                    <img src="images/media/books/saga.jpg" alt="Saga, Compendium One (2019) - Brian K. Vaughan, Fiona Staples">
-                </a>
+            <div class="column">
+                <div class="image-container">
+                    <a href="https://www.goodreads.com/book/show/44313716-saga-compendium-one">
+                        <img src="images/media/books/saga.jpg" alt="Saga, Compendium One (2019) - Brian K. Vaughan, Fiona Staples">
+                    </a>
+                </div>
+                    <a href="https://www.goodreads.com/book/show/44313716-saga-compendium-one">
+                        <h4>Saga, Compendium One (2019) - Brian K. Vaughan, Fiona Staples</h4>
+                    </a>
             </div>
-                <a href="https://www.goodreads.com/book/show/44313716-saga-compendium-one">
-                    <h4>Saga, Compendium One (2019) - Brian K. Vaughan, Fiona Staples</h4>
-                </a>
         </div>
     </section>
 </div>
